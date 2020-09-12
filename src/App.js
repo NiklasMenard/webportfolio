@@ -1,16 +1,24 @@
 import React from 'react';
-import './app_styles/app.css'
+import './app.css'
 import Header from './components/header';
-// import About from './components/about';
-// import Footer from './components/footer';
+import Main from './components/main';
+import Contact from './components/contact';
 
 const App = () => {
-  
-    return (
-      <div>
-        <Header header/>
-      </div>
-    )
-  }
+
+  return (
+    <div class="page-wrapper">
+      <header class="page-header">
+        <Header header />
+      </header>
+      <main class="page-main">
+        <Main main />
+      </main>
+      <contact>
+        <Contact contact />
+      </contact>
+    </div>
+  )
+}
 
 export default App;

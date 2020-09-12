@@ -1,20 +1,30 @@
-.header {
+.page-header nav {
     display: flex;
-    align-items: center;
+    background: grey;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.page-header ul {
+    display: flex;
+    list-style-type: none;
+    flex: 2;
     justify-content: center;
 }
 
-#navlist {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+.page-header ul li {
+    margin-right: 1rem;
+    font-family:'Courier New', Courier, monospace
 }
 
-#navlist li {
-    list-style: none;
-    display: inline-block;
-    width: calc(100% / 3);
-    height: 120px;
-    text-align: center;
+@media screen and (min-width: 550px) {
+  .page-header ul {
+    width: auto;
+    margin-top: 0;
+  }
+ 
+  .page-header .cta-contact {
+    order: 1;
+  }
 }

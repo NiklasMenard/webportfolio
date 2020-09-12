@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+h1 {
+  color:rgb(253, 255, 254);
+  font-family:'Courier New', Courier, monospace
+}
+
+p {
+  color: rgb(253, 255, 254);
+  font-family:'Courier New', Courier, monospace
+}
+
+.page-wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.page-wrapper > * {
+  margin: 1rem;
+}
+
+.page-main {
+  flex-grow: 1;
+}
