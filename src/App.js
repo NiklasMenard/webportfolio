@@ -14,7 +14,7 @@ const App = () => {
       <main class="page-main">
         <Main main />
       </main>
-      <contact>
+      <contact class="page-contact">
         <Contact contact />
       </contact>
     </div>

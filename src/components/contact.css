@@ -1,4 +1,4 @@
-.contact_class {
+.contact-container {
     display: flex;
     flex-direction: row;
 }
