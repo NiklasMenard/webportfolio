@@ -1,7 +1,11 @@
 body {
   display: flex;
-  flex-direction: column;
   background-color: black;
+  flex-direction: column;
+  padding: 1rem;
+}
+body > * {
+  margin: 1rem;
 }
 
 h1 {
@@ -14,12 +18,3 @@ p {
   font-family:'Courier New', Courier, monospace;
 }
 
-.page-wrapper{
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.page-wrapper > * {
-  margin: 1rem;
-}

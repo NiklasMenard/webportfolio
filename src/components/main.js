@@ -1,11 +1,19 @@
 import React from 'react'
+import Header from './header';
 import './main.css'
 
-const Main = () => {
+const Main = ({handleClick}) => {
     return (
-        <div class= "about-text">
-                <h1>Hello My Name is Niklas</h1>
+        <div className="main-wrapper">
 
+            <header className="page-header">
+                <Header header />
+            </header>
+
+            <button onClick={()=> handleClick(true)}>plus</button>
+
+            <div className="introtext">
+                <h1>Hello My Name is Niklas</h1>
                 <p>Programming started as a hobby but quickly grew to something I want
                 to pursue full time and something I feel very passionate about.
                 I feel like in order to be a great programmer you must have an
@@ -21,6 +29,7 @@ const Main = () => {
                 or the thought pattern behind it will be useful for me now or
                 somewhere down the road. Starting to program was one of the best
                 decisions of my life.</p>
+            </div>
         </div>
     )
 }

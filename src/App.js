@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './app.css'
-import Header from './components/header';
+
 import Main from './components/main';
 import Contact from './components/contact';
 
 const App = () => {
 
+  const [contact, setContact] = useState(false)
+
+  const handleClick = (clicked) => {
+    setContact(clicked)
+    console.log(clicked)
+  }
+
+  if(contact){
+      return(
+      <Contact id="page-contact" />
+    )
+  }
+
   return (
-    <div class="page-wrapper">
-      <header class="page-header">
-        <Header header />
-      </header>
-      <main class="page-main">
-        <Main main />
-      </main>
-      <contact class="page-contact">
-        <Contact contact />
-      </contact>
+
+    <div>
+      <Main handleClick={handleClick} />
+
     </div>
+
   )
 }
 

@@ -1,16 +1,15 @@
 import React from 'react'
 import './header.css'
 
-const Header = () => {
+const Header = (props) => {
+
     return (
         <div>
-            <nav>
                 <ul>
                     <li><a href="about">About</a></li>
                     <li><a href="resume">Resume</a></li>
-                    <li><a href="contact">Contact</a></li>
+                    <li><a href="contact" onClick = {() => props.contactClicked}  >Contact</a></li>
                 </ul>
-            </nav>
         </div>
     )
 }

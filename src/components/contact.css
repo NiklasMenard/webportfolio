@@ -1,4 +1,24 @@
 .contact-container {
     display: flex;
     flex-direction: row;
+    margin: 1rem;
 }
+
+#contact-form{
+    color:rgb(253, 255, 254);
+    background-color: rgba(60, 60, 60, 0.5);
+    padding: 10rem;
+    margin: 1rem;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+input, label{
+    width: 100%;
+}
+
