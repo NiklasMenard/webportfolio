@@ -4,7 +4,9 @@ import './main.css'
 import Contact from './contact';
 import About from './about';
 
+
 const Main = ({ handleClick, contact }) => {
+
 
     if (contact === "Contact") {
         return (
