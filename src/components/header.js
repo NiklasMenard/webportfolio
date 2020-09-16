@@ -1,14 +1,14 @@
 import React from 'react'
 import './header.css'
 
-const Header = ({ handleClick }) => {
+const Header = ({ headerButtonPressed }) => {
 
     return (
         <div>
             <ul>
-                <li><button onClick={() => handleClick("About")}>About</button></li>
-                <li><button onClick={() => handleClick("Resume")}>Resume</button></li>
-                <li><button onClick={() => handleClick("Contact")}>Contact</button></li>
+                <li><button onClick={() => headerButtonPressed("About")}>About</button></li>
+                <li><button onClick={() => headerButtonPressed("Projects")}>Projects</button></li>
+                <li><button onClick={() => headerButtonPressed("Contact")}>Contact</button></li>
             </ul>
         </div>
     )

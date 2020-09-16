@@ -6,17 +6,17 @@ import Main from './components/main';
 
 const App = () => {
 
-  const [contact, setContact] = useState([""])
+  const [headerButton, setHeaderButtonPressed] = useState([""])
 
-  const handleClick = (clicked) => {
-    setContact(clicked)
+  const headerButtonPressed = (clicked) => {
+    setHeaderButtonPressed(clicked)
     console.log(clicked)
   }
 
   return (
     <div>
-      <Main handleClick={handleClick}
-        contact={contact} />
+      <Main headerButtonPressed={headerButtonPressed}
+        headerButton={headerButton} />
     </div>
   )
 }
