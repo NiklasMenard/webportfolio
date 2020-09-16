@@ -1,15 +1,11 @@
 .contact-container {
     display: flex;
-    flex-direction: row;
-    margin: 1rem;
-}
-
-#contact-form{
+    flex-flow: column wrap;
+    align-self: center;
+    margin: auto;
     color:rgb(253, 255, 254);
+    padding: 1rem;
     background-color: rgba(60, 60, 60, 0.5);
-    padding: 10rem;
-    margin: 1rem;
-    text-align: left;
 }
 
 .form-group {
