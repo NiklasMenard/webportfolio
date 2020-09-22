@@ -8,13 +8,8 @@ body > * {
   margin: 1rem;
 }
 
-h1 {
+h1, p, ul {
   color:rgb(253, 255, 254);
-  font-family:'Courier New', Courier, monospace;
-}
-
-p {
-  color: rgb(253, 255, 254);
   font-family:'Courier New', Courier, monospace;
 }
 
@@ -28,15 +23,12 @@ p {
 
 .page-header {
     display: flex;
-    flex-flow: column;
     align-self: center;
     padding: 2rem;
 }
 
 .center-element {
   display: flex;
-  flex-flow: column;
-  align-self: center;
   margin: auto;
  }
 
@@ -45,5 +37,5 @@ p {
 }
 .center-element-transition-enter-active {
   opacity: 1;
-  transition: opacity 2000ms;
+  transition: opacity 1000ms, transform 1000ms;
 }

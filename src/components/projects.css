@@ -1,0 +1,16 @@
+.project-box {
+    background-color: rgba(60, 60, 60, 0.5);
+    padding: 25%;
+    border-radius: 1rem;
+}
+
+.project-box ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    margin-right: 1rem;
+}
+
+.project-box ul li {
+    margin-right: 1rem;
+}

@@ -12,8 +12,21 @@ const App = () => {
     const [buttonPressed, setButton] = useState("About")
     const [buttonToggled, setToggle] = useState(false)
 
+    const transitionComponent = (component) => {
+        return (
+            <CSSTransition
+                in={buttonToggled}
+                timeout={300}
+                classNames="center-element-transition">
+                <div className="center-element">
+                    {component}
+                </div>
+            </CSSTransition>
+        )
+    }
+
     const headerButtonPressed = (toggle, button) => {
-        if(buttonPressed !== button){
+        if (buttonPressed !== button) {
             setToggle(toggle)
             setButton(button)
         }
@@ -29,18 +42,10 @@ const App = () => {
         return (
 
             <div className="main-wrapper">
-
                 <div className="page-header">
                     <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled} />
                 </div>
-                <CSSTransition
-                    in={buttonToggled}
-                    timeout={300}
-                    classNames="center-element-transition">
-                    <div className="center-element">
-                        <About />
-                    </div>
-                </CSSTransition>
+                {transitionComponent(<About />)}
             </div>
         )
     }
@@ -51,16 +56,9 @@ const App = () => {
 
             <div className="main-wrapper">
                 <div className="page-header">
-                    <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled}/>
+                    <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled} />
                 </div>
-                <CSSTransition
-                    in={buttonToggled}
-                    timeout={300}
-                    classNames="center-element-transition">
-                    <div className="center-element">
-                        <Projects />
-                    </div>
-                </CSSTransition>
+                {transitionComponent(<Projects />)}
             </div>
         )
     }
@@ -73,14 +71,7 @@ const App = () => {
                 <div className="page-header">
                     <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled} />
                 </div>
-                <CSSTransition
-                    in={buttonToggled}
-                    timeout={300}
-                    classNames="center-element-transition">
-                    <div className="center-element">
-                        <Contact />
-                    </div>
-                </CSSTransition>
+                {transitionComponent(<Contact />)}
             </div>
         )
     }
