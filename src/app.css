@@ -4,20 +4,8 @@ body {
   flex-direction: column;
 }
 
-.button {
-  cursor: pointer;
-  border: 1px solid #1a202c;
-  padding: 8px;
-  min-width: 64px;
- 
-  background: transparent;
- 
-  transition: all 0.1s ease-in;
-}
- 
-.button:hover {
-  background: #1a202c;
-  color: #ffffff;
+body > * {
+  margin: 1rem;
 }
 
 h1 {
@@ -30,6 +18,32 @@ p {
   font-family:'Courier New', Courier, monospace;
 }
 
-body > * {
-  margin: 1rem;
+.main-wrapper {
+    display: flex;
+    flex-flow: column;
+    border-radius: 1rem;
+    background: url("./components/images/bkimage.jpg") no-repeat center / cover;
+    min-height: 95vh;
+  }
+
+.page-header {
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    padding: 2rem;
+}
+
+.center-element {
+  display: flex;
+  flex-flow: column;
+  align-self: center;
+  margin: auto;
+ }
+
+.center-element-transition-enter {
+  opacity: 0;
+}
+.center-element-transition-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms;
 }
