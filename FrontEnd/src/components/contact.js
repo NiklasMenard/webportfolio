@@ -9,17 +9,14 @@ const Contact = () => {
     const [newMessage, setMessage] = useState('')
 
     const onNameChange = (event) => {
-        console.log(event.target.value)
         setNewName(event.target.value)
     }
 
     const onEmailChange = (event) => {
-        console.log(event.target.value)
         setEmailAddress(event.target.value)
     }
 
     const onMessageChange = (event) => {
-        console.log(event.target.value)
         setMessage(event.target.value)
     }
 
@@ -29,19 +26,18 @@ const Contact = () => {
 
         const contactData = {name:newName, email:newEmailAddress, message:newMessage}
 
-        axios({
-            method: "POST", 
-            url:"http://localhost:3001/send", 
-            data:  contactData
-          }).then((response)=>{
+        axios.post('/send', contactData)
+            .then((response)=>{
             if (response.data.status === 'success'){
+                console.log(response)
               alert("Message Sent."); 
             reset()
             }else if(response.data.status === 'fail'){
+                console.log(response)
               alert("Message failed to send.")
             reset()
             }
-          })
+        })
     }
 
     const reset = () =>{

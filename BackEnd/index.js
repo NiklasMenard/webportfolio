@@ -4,9 +4,9 @@ const nodemailer = require('nodemailer')
 const cors = require('cors')
 
 const app = express()
-app.use(cors())
 app.use(express.json())
 app.use(express.static('build'))
+app.use(cors())
 
 const transport = {
     service: 'gmail',
@@ -42,6 +42,8 @@ app.post('/send', (req, res, next) => {
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {
+            console.log("error : " + JSON.stringify(error))
+            console.log("info : " + JSON.stringify(info))
             res.json({
                 status: 'fail'
             })
@@ -54,7 +56,7 @@ app.post('/send', (req, res, next) => {
 })
 
 
-PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-    console.log('Server listening to PORT, ', 3001)
+  console.log(`Server running on port ${PORT}`)
 })
