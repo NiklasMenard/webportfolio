@@ -21,7 +21,7 @@ const Contact = () => {
     }
 
     const handleContact = (event) => {
-        console.log("in handle contact")
+        // console.log("in handle contact")
         event.preventDefault();
 
         const contactData = {name:newName, email:newEmailAddress, message:newMessage}
@@ -29,11 +29,9 @@ const Contact = () => {
         axios.post('/send', contactData)
             .then((response)=>{
             if (response.data.status === 'success'){
-                console.log(response)
               alert("Message Sent."); 
             reset()
             }else if(response.data.status === 'fail'){
-                console.log(response)
               alert("Message failed to send.")
             reset()
             }

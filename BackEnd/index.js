@@ -42,8 +42,6 @@ app.post('/send', (req, res, next) => {
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {
-            console.log("error : " + JSON.stringify(error))
-            console.log("info : " + JSON.stringify(info))
             res.json({
                 status: 'fail'
             })
