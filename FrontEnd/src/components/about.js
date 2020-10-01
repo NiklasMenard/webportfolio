@@ -1,11 +1,12 @@
 import React from 'react'
 import './about.css'
+import { SocialIcon } from 'react-social-icons';
 
 const About = () => {
 
     return (
-        <div>
-            <div className = "text-box">
+        <div className="about-container">
+            <div className="text-box">
                 <h1>Hello My Name is Niklas</h1>
                 <p>Programming started as a hobby but quickly grew to something I want
                 to pursue full time and something I feel very passionate about.
@@ -22,6 +23,14 @@ const About = () => {
                 or the thought pattern behind it will be useful for me now or
                 somewhere down the road. Starting to program was one of the best
                 decisions of my life.</p>
+                <div className="social-media-icons">
+                    <ul>
+                        <li><SocialIcon url="https://github.com/NiklasMenard"
+                            network="github" bgColor="#black" fgColor="white" /></li>
+                        <li><SocialIcon url="https://linkedin.com/in/niklas-menard"
+                            network="linkedin" bgColor="#0e76a8" fgColor="#fafafa" /></li>
+                    </ul>
+                </div>
             </div>
         </div>
     )

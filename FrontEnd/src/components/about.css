@@ -3,7 +3,29 @@
     flex-flow: column;
     margin: auto;
     background-color: rgba(60, 60, 60, 0.5);
-    width: 25%;
     padding: 2rem;
     border-radius: 1rem;
+    width: 25%;
+}
+
+.social-media-icons ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media-icons ul li {
+    margin-right: 1rem;
+}
+
+@media (max-width: 500px) {
+    .text-box {
+        display: flex;
+        flex-flow: column;
+        margin: 10%;
+        background-color: rgba(60, 60, 60, 0.5);
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 70%;
+    }
 }

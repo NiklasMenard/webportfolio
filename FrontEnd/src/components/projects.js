@@ -3,17 +3,9 @@ import './projects.css'
 
 const Projects = () => {
 
-    const projects = [
-        "Projects coming soon",
-    ]
-
     return (
         <div className="project-box">
-            <ul>
-                {projects.map((project) => (
-                    <li>{project}</li>
-                ))}
-            </ul>
+                <h1>Projects coming soon</h1>
         </div>
     )
 }

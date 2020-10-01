@@ -1,6 +1,7 @@
 .page-header ul {
     display: flex;
     list-style-type: none;
+    padding: 0;
 }
 
 .page-header ul li {
