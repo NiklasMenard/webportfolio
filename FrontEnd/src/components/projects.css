@@ -1,6 +1,22 @@
 .project-box {
+    display: flex;
+    flex-flow: column wrap;
     background-color: rgba(60, 60, 60, 0.5);
-    padding: 2rem;
     border-radius: 1rem;
-    margin: 1rem;
+    width: 75%;
+}
+
+.project-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+.project-list li {
+    margin: 2rem;
+    padding: 4rem;
+    border-style: solid;
+    border-color: black;  
 }
