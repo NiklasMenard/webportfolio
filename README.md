@@ -1,7 +1,7 @@
 Project to create porfolio website
 
-Heroku link:
+Link:
 
-https://niklas-menard-portfolio.herokuapp.com/
+www.niklasmenard.com
 
 Projects are coming.
