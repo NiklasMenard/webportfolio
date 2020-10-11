@@ -1,6 +1,6 @@
-##Project to create porfolio website
+## Project to create porfolio website
 
-##How to run
+## How to run
 
 In root folder run npm install and npm start afterwards.
 
