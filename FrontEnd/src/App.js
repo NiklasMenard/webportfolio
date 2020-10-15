@@ -1,4 +1,4 @@
-import './app.css'
+import './App.css'
 import Header from './components/header';
 import Contact from './components/contact';
 import About from './components/about';
@@ -7,74 +7,59 @@ import Projects from './components/projects';
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from "react-transition-group";
 
+import {
+    BrowserRouter as Router,
+    Switch, Route
+} from "react-router-dom"
+
+const transitionComponent = (component, buttonToggled) => {
+    return (
+        <CSSTransition
+            in={buttonToggled}
+            timeout={300}
+            classNames="center-element-transition">
+            <div className="center-element">
+                {component}
+            </div>
+        </CSSTransition>
+    )
+}
+
 const App = () => {
 
-    const [buttonPressed, setButton] = useState("About")
     const [buttonToggled, setToggle] = useState(false)
 
-    const transitionComponent = (component) => {
-        return (
-            <CSSTransition
-                in={buttonToggled}
-                timeout={300}
-                classNames="center-element-transition">
-                <div className="center-element">
-                    {component}
-                </div>
-            </CSSTransition>
-        )
-    }
-
     const headerButtonPressed = (toggle, button) => {
-        if (buttonPressed !== button) {
             setToggle(toggle)
-            setButton(button)
-        }
     }
 
     useEffect(() => {
         setToggle(true)
-    }, [buttonPressed])
+    }, [buttonToggled])
 
-
-    if (buttonPressed === "About") {
-
-        return (
-
+    return (
+        <Router>
             <div className="main-wrapper">
                 <div className="page-header">
-                    <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled} />
+               <Header headerButtonPressed = {headerButtonPressed} buttonToggled={buttonToggled}/>
                 </div>
-                {transitionComponent(<About />)}
+                <Switch>
+                    <Route path="/about">
+                        {transitionComponent(<About />, buttonToggled)}
+                    </Route>
+                    <Route path="/projects">
+                        {transitionComponent(<Projects />, buttonToggled)}
+                    </Route>
+                    <Route path="/contact">
+                        {transitionComponent(<Contact />, buttonToggled)}
+                    </Route>
+                    <Route path="/">
+                        {transitionComponent(<About />, buttonToggled)}
+                    </Route>
+                </Switch>
             </div>
-        )
-    }
-
-    if (buttonPressed === "Projects") {
-
-        return (
-
-            <div className="main-wrapper">
-                <div className="page-header">
-                    <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled} />
-                </div>
-                {transitionComponent(<Projects />)}
-            </div>
-        )
-    }
-
-    if (buttonPressed === "Contact") {
-
-        return (
-
-            <div className="main-wrapper">
-                <div className="page-header">
-                    <Header headerButtonPressed={headerButtonPressed} buttonToggled={buttonToggled} />
-                </div>
-                {transitionComponent(<Contact />)}
-            </div>
-        )
-    }
+        </Router>
+    )
 }
 
 export default App
