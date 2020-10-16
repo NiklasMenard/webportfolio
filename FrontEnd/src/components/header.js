@@ -5,21 +5,21 @@ import { Link } from "react-router-dom"
 const Header = ({ headerButtonPressed, buttonToggled }) => {
 
   return (
-    <div>
+    <div className="page-header">
       <ul>
         <li>
           <Link to="/about">
-            <button onClick={() => headerButtonPressed(!buttonToggled, "about")}>About</button>
+            <button onClick={() => headerButtonPressed(!buttonToggled)}>About</button>
           </Link>
         </li>
         <li>
           <Link to="/projects">
-            <button onClick={() => headerButtonPressed(!buttonToggled, "projects")}>Projects</button>
+            <button onClick={() => headerButtonPressed(!buttonToggled)}>Projects</button>
           </Link>
         </li>
         <li>
           <Link to="/contact">
-            <button onClick={() => headerButtonPressed(!buttonToggled, "contact")}>Contact</button>
+            <button onClick={() => headerButtonPressed(!buttonToggled)}>Contact</button>
           </Link>
         </li>
       </ul>

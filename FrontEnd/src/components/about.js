@@ -5,7 +5,6 @@ import { SocialIcon } from 'react-social-icons';
 const About = () => {
 
     return (
-        <div className="about-container">
             <div className="text-box">
                 <h1>Hello My Name is Niklas</h1>
                 <p>Programming started as a hobby but quickly grew to something I want
@@ -32,7 +31,6 @@ const About = () => {
                     </ul>
                 </div>
             </div>
-        </div>
     )
 }
 

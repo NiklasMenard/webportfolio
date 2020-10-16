@@ -1,8 +1,9 @@
-import './App.css'
+import './app.css'
 import Header from './components/header';
 import Contact from './components/contact';
 import About from './components/about';
 import Projects from './components/projects';
+import Footer from './components/footer';
 
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from "react-transition-group";
@@ -27,37 +28,36 @@ const transitionComponent = (component, buttonToggled) => {
 
 const App = () => {
 
-    const [buttonToggled, setToggle] = useState(false)
+    const [toggled, setToggle] = useState(false)
 
-    const headerButtonPressed = (toggle, button) => {
+    const centerElementToggled = (toggle) => {
             setToggle(toggle)
     }
 
     useEffect(() => {
         setToggle(true)
-    }, [buttonToggled])
+    }, [toggled])
 
     return (
         <Router>
             <div className="main-wrapper">
-                <div className="page-header">
-               <Header headerButtonPressed = {headerButtonPressed} buttonToggled={buttonToggled}/>
-                </div>
+               <Header headerButtonPressed = {centerElementToggled} buttonToggled={toggled}/>
                 <Switch>
                     <Route path="/about">
-                        {transitionComponent(<About />, buttonToggled)}
+                        {transitionComponent(<About/>, toggled)}
                     </Route>
                     <Route path="/projects">
-                        {transitionComponent(<Projects />, buttonToggled)}
+                        {transitionComponent(<Projects/>, toggled)}
                     </Route>
                     <Route path="/contact">
-                        {transitionComponent(<Contact />, buttonToggled)}
+                        {transitionComponent(<Contact/>, toggled)}
                     </Route>
                     <Route path="/">
-                        {transitionComponent(<About />, buttonToggled)}
+                        {transitionComponent(<About />, toggled)}
                     </Route>
                 </Switch>
             </div>
+            <Footer headerButtonPressed={centerElementToggled} buttonToggled={toggled}/>
         </Router>
     )
 }

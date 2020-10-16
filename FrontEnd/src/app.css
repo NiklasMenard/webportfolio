@@ -8,7 +8,7 @@ body > * {
   margin: 1rem;
 }
 
-h1, p, ul {
+h1, h3, p, ul {
   color:rgb(253, 255, 254);
   font-family:'Courier New', Courier, monospace;
 }
@@ -17,15 +17,9 @@ h1, p, ul {
     display: flex;
     flex-flow: column;
     border-radius: 1rem;
-    background: url("./components/images/bkimage.jpg") no-repeat center / cover;
+    background: url("./components/images/bkimage.png") no-repeat center / cover;
     min-height: 95vh;
   }
-
-.page-header {
-    display: flex;
-    align-self: center;
-    padding: 2rem;
-}
 
 .center-element {
   display: flex;
