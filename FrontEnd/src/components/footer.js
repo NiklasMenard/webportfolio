@@ -1,10 +1,10 @@
 import React from 'react'
 import './footer.css'
 import ProfilePicture from './images/profilepic.png';
-import { Link } from "react-router-dom"
+import { HashLink } from 'react-router-hash-link'
 
 
-const Footer = ({headerButtonPressed, buttonToggled}) => {
+const Footer = ({ headerButtonPressed, buttonToggled }) => {
 
     return (
         <div className="footer-container">
@@ -13,13 +13,17 @@ const Footer = ({headerButtonPressed, buttonToggled}) => {
                 <h3>What do I offer</h3>
                 <p>
                     I am a problem solver with a background in marketing, sales and finance.
-                    My main focus currently is web and mobile development and
+                    My main focus currently is fullstack web and mobile development.
                 </p>
                 <p>
-                Feel free to
-                <Link to="/contact" onClick={() => headerButtonPressed(!buttonToggled)}> contact </Link>
-                me and check out my
-                <Link to="/projects" onClick={() => headerButtonPressed(!buttonToggled)}> work </Link>
+                    My biggest strength is that im not only a programmer but somebody who has a
+                    thorough understanding of customer needs and how to answer them.
+                </p>
+                <p>
+                    Feel free to
+                    <HashLink smooth to="/contact#top" onClick={() => headerButtonPressed(!buttonToggled)}>contact</HashLink>
+                    me and check out my
+                    <HashLink smooth to="/projects#top" onClick={() => headerButtonPressed(!buttonToggled)}>work</HashLink>
                 </p>
             </div>
         </div>

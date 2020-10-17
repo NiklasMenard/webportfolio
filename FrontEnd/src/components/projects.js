@@ -4,12 +4,7 @@ import './projects.css'
 const Projects = () => {
 
     const project = [
-        {name:'Project1'},
-        {name:'Project2'},
-        {name:'Project3'},
-        {name:'Project4'},
-        {name:'Project5'},
-        {name:'Project6'},
+        {name:'Coming soon'},
     ]
 
     return (
