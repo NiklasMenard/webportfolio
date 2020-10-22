@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import './contact.css'
+import styled from 'styled-components';
 
 const Contact = () => {
 
@@ -21,7 +21,6 @@ const Contact = () => {
     }
 
     const handleContact = (event) => {
-        // console.log("in handle contact")
         event.preventDefault();
 
         const contactData = {name:newName, email:newEmailAddress, message:newMessage}
@@ -45,26 +44,41 @@ const Contact = () => {
     }
 
     return (
-        <div className="contact-container">
-            <form id="contact-form" onSubmit={handleContact}>
-                <div className="form-group">
+        <ContactContainer>
+            <form onSubmit={handleContact}>
+                <FormGroup>
                     <label>Name</label>
-                    <input type="text" className="form-control" value={newName} onChange={onNameChange} />
-                </div>
-                <div className="form-group">
+                    <input type="text" value={newName} onChange={onNameChange} />
+                </FormGroup>
+                <FormGroup >
                     <label>Email address</label>
-                    <input type="email" className="form-control" aria-describedby="emailHelp" value={newEmailAddress} onChange={onEmailChange} />
-                </div>
-                <div className="form-group">
+                    <input type="email" value={newEmailAddress} onChange={onEmailChange} />
+                </FormGroup>
+                <FormGroup >
                     <label>Message</label>
-                    <textarea className="form-control" rows="5" value={newMessage} onChange={onMessageChange} />
-                </div>
-                <div className="form-group">
+                    <textarea rows="5" value={newMessage} onChange={onMessageChange} />
+                </FormGroup>
+                <FormGroup>
                     <button type="submit">Submit</button>
-                </div>
+                </FormGroup>
             </form>
-        </div>
+        </ContactContainer>
     )
 }
+
+const ContactContainer = styled.div`
+color:rgb(253, 255, 254);
+background-color: rgba(60, 60, 60, 0.5);
+border-radius: 1rem;
+padding: 2rem;
+}
+`
+
+const FormGroup = styled.div`
+display: flex;
+flex-direction: column;
+padding: 1rem;
+}
+`
 
 export default Contact

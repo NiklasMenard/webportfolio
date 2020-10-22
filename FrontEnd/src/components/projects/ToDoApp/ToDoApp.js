@@ -58,8 +58,8 @@ const ToDoApp = () => {
 const ToDoListContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 19rem;
 flex: auto;
+width: 19rem;
 list-style: none;  
 padding: 0;
 `

@@ -1,11 +1,11 @@
 import React from 'react'
-import './about.css'
 import { SocialIcon } from 'react-social-icons';
+import styled from 'styled-components';
 
 const About = () => {
 
     return (
-            <div className="text-box">
+            <TextBox>
                 <h1>Hello My Name is Niklas</h1>
                 <p>Programming started as a hobby but quickly grew to something I want
                 to pursue full time and something I feel very passionate about.
@@ -22,16 +22,42 @@ const About = () => {
                 or the thought pattern behind it will be useful for me now or
                 somewhere down the road. Starting to program was one of the best
                 decisions of my life.</p>
-                <div className="social-media-icons">
+                <SocialMediaIcons>
                     <ul>
                         <li><SocialIcon url="https://github.com/NiklasMenard"
                             network="github" bgColor="#black" fgColor="white" /></li>
                         <li><SocialIcon url="https://linkedin.com/in/niklas-menard"
                             network="linkedin" bgColor="#0e76a8" fgColor="#fafafa" /></li>
                     </ul>
-                </div>
-            </div>
+                </SocialMediaIcons>
+            </TextBox>
     )
 }
+
+// styles
+
+const TextBox = styled.div`
+display: flex;
+flex-flow: column;
+background-color: rgba(60, 60, 60, 0.5);
+padding: 2rem;
+border-radius: 1rem;
+width: 30rem;
+margin-bottom: 2rem;
+@media (max-width: 500px) {
+width: 18rem;
+}
+`
+
+const SocialMediaIcons = styled.div`
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin-right: 1rem;
+}
+`
 
 export default About

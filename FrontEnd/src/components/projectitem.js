@@ -1,15 +1,16 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 
-const ProjectItem = props => {
+const ProjectItem = ({name, description, linkTo, headerButtonPressed, buttonToggled}) => {
     return (
         <>  
-            <h3>To Do App</h3>
-            <Link to="/projects/todoapp">
-                <button onClick={() => props.headerButtonPressed(!props.buttonToggled)}>Demo</button>
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <Link to={`${linkTo}`}>
+                <button onClick={() => headerButtonPressed(!buttonToggled)}>Demo</button>
             </Link>
-            <button onClick={() => props.headerButtonPressed(!props.buttonToggled)}>Code</button>
+            <button onClick={() => headerButtonPressed(!buttonToggled)}>Code</button>
         </>
     )
 }

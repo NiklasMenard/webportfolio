@@ -21,9 +21,9 @@ const Footer = ({ headerButtonPressed, buttonToggled }) => {
                 </p>
                 <p>
                     Feel free to
-                    <HashLink smooth to="/contact#top" onClick={() => headerButtonPressed(!buttonToggled)}>contact</HashLink>
+                    <HashLink to="/contact#top" onClick={() => headerButtonPressed(!buttonToggled)}>contact</HashLink>
                     me and check out my
-                    <HashLink smooth to="/projects#top" onClick={() => headerButtonPressed(!buttonToggled)}>work</HashLink>
+                    <HashLink to="/projects#top" onClick={() => headerButtonPressed(!buttonToggled)}>work</HashLink>
                 </p>
             </div>
         </div>

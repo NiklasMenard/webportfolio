@@ -1,37 +1,28 @@
-import './app.css'
 import Header from './components/header';
 import Contact from './components/contact';
 import About from './components/about';
 import ProjectList from './components/projectlist';
 import Footer from './components/footer';
 import ToDoApp from './components/projects/ToDoApp/ToDoApp';
+import Background from './components/images/bkimage.png'
+import styled from 'styled-components';
+import Transition from './styles/transition'
+import GlobalStyle from './styles/globalstyle'
 import React, { useState, useEffect } from 'react';
-import { CSSTransition } from "react-transition-group";
+
 
 import {
     BrowserRouter as Router,
     Switch, Route
 } from "react-router-dom"
 
-const transitionComponent = (component, buttonToggled) => {
-    return (
-        <CSSTransition
-            in={buttonToggled}
-            timeout={300}
-            classNames="center-element-transition">
-            <div className="center-element">
-                {component}
-            </div>
-        </CSSTransition>
-    )
-}
 
 const App = () => {
 
     const [toggled, setToggle] = useState(false)
 
     const centerElementToggled = (toggle) => {
-            setToggle(toggle)
+        setToggle(toggle)
     }
 
     useEffect(() => {
@@ -40,32 +31,45 @@ const App = () => {
 
     return (
         <Router>
-            <div className="main-wrapper">
-               <Header headerButtonPressed = {centerElementToggled} buttonToggled={toggled}/>
+            <GlobalStyle />
+            <MainWrapper>
+                <Header headerButtonPressed={centerElementToggled}
+                        buttonToggled={toggled} />
                 <Switch>
                     <Route path="/about">
-                        {transitionComponent(<About/>, toggled)}
+                        {Transition(<About />, toggled)}
                     </Route>
-                    <Route exact path="/projects/todoapp" component>
-                        {transitionComponent(<ToDoApp/>, toggled)}
+                    <Route exact path="/projects/todoapp">
+                        {Transition(<ToDoApp />, toggled)}
                     </Route>
                     <Route path="/projects">
-                        {transitionComponent(
-                        <ProjectList 
-                        headerButtonPressed = {centerElementToggled} 
-                        buttonToggled={toggled}/>, toggled)}
+                        {Transition(
+                            <ProjectList
+                                headerButtonPressed={centerElementToggled}
+                                buttonToggled={toggled} />,
+                            toggled)}
                     </Route>
                     <Route path="/contact">
-                        {transitionComponent(<Contact/>, toggled)}
+                        {Transition(<Contact />, toggled)}
                     </Route>
                     <Route path="/">
-                        {transitionComponent(<About />, toggled)}
+                        {Transition(<About />, toggled)}
                     </Route>
                 </Switch>
-            </div>
-            <Footer headerButtonPressed={centerElementToggled} buttonToggled={toggled}/>
+            </MainWrapper>
+            <Footer headerButtonPressed={centerElementToggled} buttonToggled={toggled} />
         </Router>
     )
 }
+
+// styles
+
+const MainWrapper = styled.div`
+display: flex;
+flex-flow: column;
+border-radius: 1rem;
+background: url(${Background}) no-repeat center / cover;
+min-height: 95vh;
+`
 
 export default App
