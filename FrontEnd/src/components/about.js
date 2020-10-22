@@ -44,7 +44,7 @@ padding: 2rem;
 border-radius: 1rem;
 width: 30rem;
 margin-bottom: 2rem;
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 width: 18rem;
 }
 `

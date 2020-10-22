@@ -46,6 +46,7 @@ SubmitHandler.propTypes = {
 
 const SubmitBar = styled.div`
 flex: 1 0 auto;
+
   form {
     display: flex;
     flex-direction: row;
@@ -56,16 +57,10 @@ flex: 1 0 auto;
     padding: 1rem;
     border-style: solid;
     border-color: black;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     }
   button {
     margin-left: 0.5rem;
-    border-style: solid;
-    border-color: black;
-    border-radius: 1rem;
-    :hover {
-      background-color: #a8f0b3;
-      }
     }
   }
 `

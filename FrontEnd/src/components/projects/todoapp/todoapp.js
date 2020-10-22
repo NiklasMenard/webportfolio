@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import SubmitBar from './SubmitBar'
-import TodoItem from './TodoItem'
+import SubmitBar from './submitbar'
+import TodoItem from './todoitem'
 import { v4 as uuidv4 } from 'uuid'
 
 
@@ -34,7 +34,7 @@ const ToDoApp = () => {
   }
 
   return (
-    <>
+
         <ToDoListContainer>
           <SubmitBar addTask={addTask} />
           {todoList.map((task) => (
@@ -49,7 +49,7 @@ const ToDoApp = () => {
             </li>
           ))}
         </ToDoListContainer>
-    </>
+
   )
 }
 
@@ -59,8 +59,11 @@ const ToDoListContainer = styled.div`
 display: flex;
 flex-direction: column;
 flex: auto;
-width: 19rem;
+width: 30rem;
 list-style: none;  
 padding: 0;
+@media (max-width: 600px) {
+  width: 18rem;
+  }
 `
 export default ToDoApp

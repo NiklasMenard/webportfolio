@@ -3,10 +3,10 @@ import Contact from './components/contact';
 import About from './components/about';
 import ProjectList from './components/projectlist';
 import Footer from './components/footer';
-import ToDoApp from './components/projects/ToDoApp/ToDoApp';
+import ToDoApp from './components/projects/todoapp/todoapp';
 import Background from './components/images/bkimage.png'
 import styled from 'styled-components';
-import Transition from './styles/transition'
+import TransitionCenterElement from './styles/transition'
 import GlobalStyle from './styles/globalstyle'
 import React, { useState, useEffect } from 'react';
 
@@ -20,8 +20,8 @@ import {
 const App = () => {
 
     const [toggled, setToggle] = useState(false)
-
     const centerElementToggled = (toggle) => {
+        console.log(toggle)
         setToggle(toggle)
     }
 
@@ -33,37 +33,39 @@ const App = () => {
         <Router>
             <GlobalStyle />
             <MainWrapper>
-                <Header headerButtonPressed={centerElementToggled}
-                        buttonToggled={toggled} />
+                <Header 
+                    headerButtonPressed={centerElementToggled}
+                    buttonToggled={toggled} />
                 <Switch>
                     <Route path="/about">
-                        {Transition(<About />, toggled)}
+                        {TransitionCenterElement(<About />, toggled)}
                     </Route>
                     <Route exact path="/projects/todoapp">
-                        {Transition(<ToDoApp />, toggled)}
+                        {TransitionCenterElement(<ToDoApp />, toggled)}
                     </Route>
                     <Route path="/projects">
-                        {Transition(
-                            <ProjectList
-                                headerButtonPressed={centerElementToggled}
-                                buttonToggled={toggled} />,
-                            toggled)}
+                        {TransitionCenterElement(
+                        <ProjectList
+                        headerButtonPressed={centerElementToggled}
+                        buttonToggled={toggled} />,
+                        toggled)}
                     </Route>
                     <Route path="/contact">
-                        {Transition(<Contact />, toggled)}
+                        {TransitionCenterElement(<Contact />, toggled)}
                     </Route>
                     <Route path="/">
-                        {Transition(<About />, toggled)}
+                        {TransitionCenterElement(<About />, toggled)}
                     </Route>
                 </Switch>
             </MainWrapper>
-            <Footer headerButtonPressed={centerElementToggled} buttonToggled={toggled} />
+            <Footer 
+                headerButtonPressed={centerElementToggled} 
+                buttonToggled={toggled} />
         </Router>
     )
 }
 
 // styles
-
 const MainWrapper = styled.div`
 display: flex;
 flex-flow: column;

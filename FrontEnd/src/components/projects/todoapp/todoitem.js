@@ -43,6 +43,8 @@ const TodoItemBar = styled.div`
     flex: 1 0 50%;
     padding: 1rem;
     color: black;
+    max-width: 25rem;
+    overflow-wrap: break-word;
   }
 `
 
