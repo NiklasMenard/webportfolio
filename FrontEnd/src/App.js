@@ -2,9 +2,9 @@ import './app.css'
 import Header from './components/header';
 import Contact from './components/contact';
 import About from './components/about';
-import Projects from './components/projects';
+import ProjectList from './components/projectlist';
 import Footer from './components/footer';
-
+import ToDoApp from './components/projects/ToDoApp/ToDoApp';
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from "react-transition-group";
 
@@ -46,8 +46,14 @@ const App = () => {
                     <Route path="/about">
                         {transitionComponent(<About/>, toggled)}
                     </Route>
+                    <Route exact path="/projects/todoapp" component>
+                        {transitionComponent(<ToDoApp/>, toggled)}
+                    </Route>
                     <Route path="/projects">
-                        {transitionComponent(<Projects/>, toggled)}
+                        {transitionComponent(
+                        <ProjectList 
+                        headerButtonPressed = {centerElementToggled} 
+                        buttonToggled={toggled}/>, toggled)}
                     </Route>
                     <Route path="/contact">
                         {transitionComponent(<Contact/>, toggled)}
