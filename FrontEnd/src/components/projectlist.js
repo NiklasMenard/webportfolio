@@ -1,10 +1,11 @@
-import React from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import ProjectItem from './projectitem'
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import ProjectItem from './projectitem';
+import TransitionEffect from '../helper/transitioneffect'
 import styled from 'styled-components';
 
 
-const ProjectList = ({ headerButtonPressed, buttonToggled }) => {
+const ProjectList = () => {
 
     const projects = [
         {   
@@ -26,6 +27,7 @@ const ProjectList = ({ headerButtonPressed, buttonToggled }) => {
     ]
 
     return (
+        <TransitionEffect>
         <ProjectBox>
             <ProjectListItems>
                 {projects.map((project) => (
@@ -35,13 +37,12 @@ const ProjectList = ({ headerButtonPressed, buttonToggled }) => {
                             name={project.name}
                             description={project.description}
                             linkTo={project.linkTo} 
-                            headerButtonPressed={headerButtonPressed}
-                            buttonToggled={buttonToggled}
                         />
                     </li>
                 ))}
             </ProjectListItems>
         </ProjectBox>
+        </TransitionEffect>
     )
 }
 

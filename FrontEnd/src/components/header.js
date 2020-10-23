@@ -2,24 +2,24 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import styled from 'styled-components';
 
-const Header = ({ headerButtonPressed, buttonToggled }) => {
+const Header = () => {
 
   return (
     <HeaderContainer>
       <ul>
         <li>
           <Link to="/about">
-            <button onClick={() => headerButtonPressed(!buttonToggled)}>About</button>
+            <button>About</button>
           </Link>
         </li>
         <li>
           <Link to="/projects">
-            <button onClick={() => headerButtonPressed(!buttonToggled)}>Projects</button>
+            <button>Projects</button>
           </Link>
         </li>
         <li>
           <Link to="/contact">
-            <button onClick={() => headerButtonPressed(!buttonToggled)}>Contact</button>
+            <button>Contact</button>
           </Link>
         </li>
       </ul>

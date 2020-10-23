@@ -1,35 +1,37 @@
 import React from 'react';
-import { CSSTransition } from "react-transition-group";
+import { Route, Switch, useLocation } from "react-router-dom";
 import styled from 'styled-components';
+import {AnimatePresence} from 'framer-motion'
+
+import Contact from '../components/contact';
+import About from '../components/about';
+import ProjectList from '../components/projectlist';
+import ToDoApp from '../components/projects/todoapp/todoapp';
 
 
-const Transition = (component, buttonToggled) => {
+const TransitionCenterElement = () => {
+
+    const location = useLocation()
+
     return (
-        <CSSTransition
-            in={buttonToggled}
-            timeout={300}
-            classNames="center-element-transition">
-            <CenterElement>
-                {component}
-            </CenterElement>
-        </CSSTransition>
+        <CenterElement>
+            <AnimatePresence exitBeforeEnter>
+            <Switch location= {location} key = {location.key}>
+                <Route path="/about" component={About} exact />
+                <Route path="/projects/todoapp" component={ToDoApp} exact />
+                <Route path="/projects" component={ProjectList} exact />
+                <Route path="/contact" component={Contact} exact />
+                <Route path="/" component={About} exact />
+            </Switch>
+            </AnimatePresence>
+        </CenterElement>
     )
 }
 
-
-export default Transition
-
+export default TransitionCenterElement
 
 const CenterElement = styled.div`
 display: flex;
 margin: auto;
 justify-content: center;
-
-&.center-element-transition-enter {
-    opacity: 0;
-  }
-&.center-element-transition-enter-active {
-    opacity: 1;
-    transition: opacity 1000ms, transform 1000ms;
-}
 `

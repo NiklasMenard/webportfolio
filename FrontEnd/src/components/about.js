@@ -1,10 +1,12 @@
 import React from 'react'
 import { SocialIcon } from 'react-social-icons';
 import styled from 'styled-components';
+import TransitionEffect from '../helper/transitioneffect'
 
 const About = () => {
 
     return (
+            <TransitionEffect>
             <TextBox>
                 <h1>Hello My Name is Niklas</h1>
                 <p>Programming started as a hobby but quickly grew to something I want
@@ -31,6 +33,7 @@ const About = () => {
                     </ul>
                 </SocialMediaIcons>
             </TextBox>
+            </TransitionEffect>
     )
 }
 
@@ -43,7 +46,7 @@ background-color: rgba(60, 60, 60, 0.5);
 padding: 2rem;
 border-radius: 1rem;
 width: 30rem;
-margin-bottom: 2rem;
+margin-bottom: 2rem; 
 @media (max-width: 600px) {
 width: 18rem;
 }

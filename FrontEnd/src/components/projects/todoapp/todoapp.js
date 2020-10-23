@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SubmitBar from './submitbar'
 import TodoItem from './todoitem'
 import { v4 as uuidv4 } from 'uuid'
+import TransitionEffect from '../../../helper/transitioneffect'
 
 
 const ToDoApp = () => {
@@ -34,21 +35,22 @@ const ToDoApp = () => {
   }
 
   return (
-
-        <ToDoListContainer>
-          <SubmitBar addTask={addTask} />
-          {todoList.map((task) => (
-            <li key={task.id}>
-              <TodoItem
-                id={task.id}
-                name={task.name}
-                complete={task.complete}
-                toggleComplete={toggleComplete}
-                onRemoveClick={onRemoveClick}
-              />
-            </li>
-          ))}
-        </ToDoListContainer>
+    <TransitionEffect>
+      <ToDoListContainer>
+        <SubmitBar addTask={addTask} />
+        {todoList.map((task) => (
+          <li key={task.id}>
+            <TodoItem
+              id={task.id}
+              name={task.name}
+              complete={task.complete}
+              toggleComplete={toggleComplete}
+              onRemoveClick={onRemoveClick}
+            />
+          </li>
+        ))}
+      </ToDoListContainer>
+    </TransitionEffect>
 
   )
 }
