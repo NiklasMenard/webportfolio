@@ -1,7 +1,7 @@
 import React from 'react'
 import { SocialIcon } from 'react-social-icons';
 import styled from 'styled-components';
-import TransitionEffect from '../helper/transitioneffect'
+import TransitionEffect from '../styles/transitioneffect'
 
 const About = () => {
 
@@ -17,13 +17,6 @@ const About = () => {
                 what makes it so gratifying when you finally see the pieces of the
                 puzzle lock into place.</p>
 
-                <p>What I love about programming is that I never
-                feel that the information that I learn is not useful, even if it is
-                not directly related to the project I am currently working on.
-                I always know that the programming related information I learn
-                or the thought pattern behind it will be useful for me now or
-                somewhere down the road. Starting to program was one of the best
-                decisions of my life.</p>
                 <SocialMediaIcons>
                     <ul>
                         <li><SocialIcon url="https://github.com/NiklasMenard"
@@ -45,10 +38,10 @@ flex-flow: column;
 background-color: rgba(60, 60, 60, 0.5);
 padding: 2rem;
 border-radius: 1rem;
-width: 30rem;
-margin-bottom: 2rem; 
+width: 25rem;
 @media (max-width: 600px) {
-width: 18rem;
+width: 15rem;
+
 }
 `
 

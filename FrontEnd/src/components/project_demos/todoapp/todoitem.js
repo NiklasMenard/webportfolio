@@ -4,20 +4,24 @@ import PropTypes from 'prop-types'
 import { BiCheckbox, BiCheckboxChecked } from 'react-icons/bi'
 import { BsTrashFill } from 'react-icons/bs'
 
+
 const TodoItem = ({ id, name, complete, toggleComplete, onRemoveClick }) => (
-  <TodoItemBar complete={complete}>
-    <h3>{name}</h3>
-    <IconContainer>
-      {complete ? (
-        <BiCheckboxChecked
-          onClick={() => toggleComplete(id, !complete)}
-        ></BiCheckboxChecked>
-      ) : (
-        <BiCheckbox onClick={() => toggleComplete(id, !complete)}></BiCheckbox>
-      )}
-      <BsTrashFill onClick={() => onRemoveClick(id)}></BsTrashFill>
-    </IconContainer>
-  </TodoItemBar>
+
+
+    <TodoItemBar complete={complete}>
+        <h3>{name}</h3>
+        <IconContainer>
+          {complete ? (
+            <BiCheckboxChecked
+              onClick={() => toggleComplete(id, !complete)}
+            ></BiCheckboxChecked>
+          ) : (
+              <BiCheckbox onClick={() => toggleComplete(id, !complete)}></BiCheckbox>
+            )}
+          <BsTrashFill onClick={() => onRemoveClick(id)}></BsTrashFill>
+        </IconContainer>
+      </TodoItemBar>
+
 )
 
 TodoItem.propTypes = {

@@ -2,13 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-body {
-    display: flex;
+  body {
     background-color: black;
-    flex-direction: column;
-  }
-  
-  body > * {
     margin: 1rem;
   }
   

@@ -10,17 +10,18 @@ const containerVariants = {
         transition: { delay: 0, duration: 1}
     },
     exit: {
-        transition: {ease: 'easeInOut'}
+        transition: {delay: 0, duration: 1}
     }
 }
 
 const TransitionEffect = (props) => {
+
     return(
     <motion.div
         variants = {containerVariants}
         initial = "hidden"
         animate = "visible"
-        exit = "hidden">
+        exit = "exit">
         {props.children}
     </motion.div>
     )

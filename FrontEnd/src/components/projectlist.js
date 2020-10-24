@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import ProjectItem from './projectitem';
-import TransitionEffect from '../helper/transitioneffect'
+import TransitionEffect from '../styles/transitioneffect'
 import styled from 'styled-components';
 
 
@@ -10,19 +10,27 @@ const ProjectList = () => {
     const projects = [
         {   
             id: uuidv4(),
-            name: 'ToDoApp',
-            description: 'Simple to do App',
-            linkTo: 'projects/todoapp'
+            name: 'ToDo App',
+            description: 'Simple to do App Simple to do App Simple to do App Simple to do App',
+            linkTo: '/projects/todoapp',
+            code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/components/projects/todoapp',
+            demo: true
         },
         {   
             id: uuidv4(),
-            linkTo: 'projects/todoapp',
-            name: 'ToDoApp'
+            name: "Dijkstra's Algorithm",
+            description: 'Simple Python implementation of Dijkstras Shortest path algorithm',
+            linkTo: '',
+            code: 'https://github.com/NiklasMenard/dijkstra_shortest_path',
+            demo: false
         },
         {   
             id: uuidv4(),
-            linkTo: 'projects/todoapp',
-            name: 'ToDoApp'
+            name: 'Java Random Maze Game',
+            description: 'A Java game that generates a random maze each game',
+            linkTo: '',
+            code: 'https://github.com/NiklasMenard/random_maze_generator_game',
+            demo: false
         }
     ]
 
@@ -36,7 +44,9 @@ const ProjectList = () => {
                             id={project.id}
                             name={project.name}
                             description={project.description}
-                            linkTo={project.linkTo} 
+                            linkTo={project.linkTo}
+                            code={project.code}
+                            demo = {project.demo}
                         />
                     </li>
                 ))}
@@ -50,26 +60,25 @@ const ProjectList = () => {
 
 const ProjectBox = styled.div`
 display: flex;
-flex-flow: column wrap;
-flex: 0 1 35rem;
+flex-direction: column;
 background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
-margin-bottom: 2rem;
+align-items: center;
 `
 
 const ProjectListItems = styled.div`
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-  }
 li {
     list-style: none;
-    margin: 1.5rem;
-    padding: 5rem;
+    margin: 1rem;
     border-style: solid;
-    border-color: black;  
+    border-color: black;
+    border-radius: 1rem;
+    height: 14rem;
+    width: 18rem;
+    @media (max-width: 600px) {
+        height: 15rem;
+        width: 15rem;
+    }
 }
 `
 

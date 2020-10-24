@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Header = () => {
 
+
   return (
     <HeaderContainer>
       <ul>
@@ -28,16 +29,17 @@ const Header = () => {
 }
 
 const HeaderContainer = styled.div`
-display: flex;
 align-self: center;
 padding: 2rem;
-ul, li {
+ul {
   display: flex;
   list-style-type: none;
   padding: 0;
+  
+li {
   margin-right: 1rem;
-  font-family:'Courier New', Courier, monospace
 }
+
 button {
   border: 1px solid #1a202c;
   padding: 8px;

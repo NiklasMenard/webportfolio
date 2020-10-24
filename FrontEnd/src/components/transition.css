@@ -1,9 +1,0 @@
-.switch-wrapper {
-    position: relative;
-  }
-  
-.switch-wrapper > div {
-    position: absolute;
-    border-style: solid;
-    border-color: black;
-}

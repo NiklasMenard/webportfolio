@@ -36,10 +36,12 @@ flex-direction: row;
 flex-wrap: wrap;
 margin-top: 4rem;
 justify-content: center;
-
 img {
     border-radius: 1rem;
     margin-right: 1rem;
+}
+h3, p {
+    margin-left: 1rem;
 }
 `
 

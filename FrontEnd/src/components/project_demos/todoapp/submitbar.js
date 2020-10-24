@@ -17,6 +17,7 @@ const SubmitHandler = ({ addTask }) => {
         id: uuidv4(),
         name: newTodo,
         complete: false,
+        removed: false
       })
       setNewTodo('')
     }

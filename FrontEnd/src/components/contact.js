@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
-import TransitionEffect from '../helper/transitioneffect'
+import TransitionEffect from '../styles/transitioneffect'
 
 const Contact = () => {
 
@@ -70,11 +70,12 @@ const Contact = () => {
 }
 
 const ContactContainer = styled.div`
-width: 20rem;
 color:rgb(253, 255, 254);
 background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
 padding: 2rem;
+width: 15rem;
+
 }
 `
 
