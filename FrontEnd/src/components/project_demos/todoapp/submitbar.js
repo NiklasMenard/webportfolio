@@ -7,7 +7,11 @@ const SubmitHandler = ({ addTask }) => {
   const [newTodo, setNewTodo] = useState('')
 
   const handleTaskChange = (event) => {
+    if(event.target.value.length<=50)
     setNewTodo(event.target.value)
+    else{
+      alert('Maximum task length is 50 characters');
+    }
   }
 
   const createTask = (event) => {
@@ -46,14 +50,14 @@ SubmitHandler.propTypes = {
 // styles
 
 const SubmitBar = styled.div`
-flex: 1 0 auto;
-
   form {
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
   }
   input {
+    text-overflow: ellipsis;
+    white-space: nowrap;
     flex: 1;
     padding: 1rem;
     border-style: solid;

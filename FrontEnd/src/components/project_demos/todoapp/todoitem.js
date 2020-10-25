@@ -47,9 +47,15 @@ const TodoItemBar = styled.div`
     flex: 1 0 50%;
     padding: 1rem;
     color: black;
-    max-width: 25rem;
+    max-width: 16rem;
     overflow-wrap: break-word;
   }
+  @media (max-width: 600px) {
+    h3 {
+      max-width: 10rem;
+      overflow-wrap: break-word;
+    }
+    }
 `
 
 const IconContainer = styled.div`

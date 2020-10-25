@@ -10,9 +10,12 @@ const About = () => {
             <TextBox>
                 <h1>Hello My Name is Niklas</h1>
                 <p>Programming started as a hobby but quickly grew to something I want
-                to pursue full time and something I feel very passionate about.
-                I feel like in order to be a great programmer you must have an
-                unquenchable need to solve problems. Encountering roadblocks on the
+                to pursue full time and something I feel very passionate about. I feel 
+                like in order to be a great programmer you must have an
+                unquenchable need to solve problems. </p>
+
+                <p>
+                Encountering roadblocks on the
                 road to the solution is part of the process and ultimately that is
                 what makes it so gratifying when you finally see the pieces of the
                 puzzle lock into place.</p>
