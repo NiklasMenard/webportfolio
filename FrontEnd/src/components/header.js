@@ -1,32 +1,28 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Header = () => {
-
-
-  return (
-    <HeaderContainer>
-      <ul>
-        <li>
-          <Link to="/about">
-            <button>About</button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/projects">
-            <button>Projects</button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact">
-            <button>Contact</button>
-          </Link>
-        </li>
-      </ul>
-    </HeaderContainer>
-  )
-}
+const Header = () => (
+  <HeaderContainer>
+    <ul>
+      <li>
+        <Link to="/about">
+          <button type="button">About</button>
+        </Link>
+      </li>
+      <li>
+        <Link to="/projects">
+          <button type="button">Projects</button>
+        </Link>
+      </li>
+      <li>
+        <Link to="/contact">
+          <button type="button">Contact</button>
+        </Link>
+      </li>
+    </ul>
+  </HeaderContainer>
+);
 
 const HeaderContainer = styled.div`
 align-self: center;
@@ -46,5 +42,5 @@ button {
   min-width: 64px;   
   border-radius: 0.5rem;
 }
-`
-export default Header
+`;
+export default Header;

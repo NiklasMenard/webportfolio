@@ -20,5 +20,5 @@ const GlobalStyle = createGlobalStyle`
   button:hover {
     background-color: #a8f0b3;
   }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

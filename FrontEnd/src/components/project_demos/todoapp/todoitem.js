@@ -1,28 +1,28 @@
-import React from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import { BiCheckbox, BiCheckboxChecked } from 'react-icons/bi'
-import { BsTrashFill } from 'react-icons/bs'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { BiCheckbox, BiCheckboxChecked } from 'react-icons/bi';
+import { BsTrashFill } from 'react-icons/bs';
 
+const TodoItem = ({
+  id, name, complete, toggleComplete, onRemoveClick,
+}) => (
 
-const TodoItem = ({ id, name, complete, toggleComplete, onRemoveClick }) => (
+  <TodoItemBar complete={complete}>
+    <h3>{name}</h3>
+    <IconContainer>
+      {complete ? (
+        <BiCheckboxChecked
+          onClick={() => toggleComplete(id, !complete)}
+        />
+      ) : (
+        <BiCheckbox onClick={() => toggleComplete(id, !complete)} />
+      )}
+      <BsTrashFill onClick={() => onRemoveClick(id)} />
+    </IconContainer>
+  </TodoItemBar>
 
-
-    <TodoItemBar complete={complete}>
-        <h3>{name}</h3>
-        <IconContainer>
-          {complete ? (
-            <BiCheckboxChecked
-              onClick={() => toggleComplete(id, !complete)}
-            ></BiCheckboxChecked>
-          ) : (
-              <BiCheckbox onClick={() => toggleComplete(id, !complete)}></BiCheckbox>
-            )}
-          <BsTrashFill onClick={() => onRemoveClick(id)}></BsTrashFill>
-        </IconContainer>
-      </TodoItemBar>
-
-)
+);
 
 TodoItem.propTypes = {
   id: PropTypes.string.isRequired,
@@ -30,7 +30,7 @@ TodoItem.propTypes = {
   complete: PropTypes.bool.isRequired,
   toggleComplete: PropTypes.func.isRequired,
   onRemoveClick: PropTypes.func.isRequired,
-}
+};
 
 // styles
 
@@ -56,12 +56,12 @@ const TodoItemBar = styled.div`
       overflow-wrap: break-word;
     }
     }
-`
+`;
 
 const IconContainer = styled.div`
   align-self: center;
   padding-right: 1rem;
   font-size: 2rem;
-`
+`;
 
-export default TodoItem
+export default TodoItem;

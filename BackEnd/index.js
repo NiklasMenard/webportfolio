@@ -8,6 +8,7 @@ app.use(express.json())
 app.use(express.static('build'))
 app.use(cors())
 
+
 const transport = {
     service: 'gmail',
     auth: {
@@ -19,12 +20,16 @@ const transport = {
 const transporter = nodemailer.createTransport(transport)
 
 transporter.verify((error, success) => {
-    if (error) {
+    if (error) {s
         console.log(error);
     } else {
         console.log('Server is running');
     }
 });
+
+app.get('/*', function(req, res) {
+    res.sendFile(__dirname + '/build/index.html');
+})
 
 app.post('/send', (req, res, next) => {
     

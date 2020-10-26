@@ -11,12 +11,14 @@
     "express": "^4.17.1",
     "framer-motion": "^2.9.4",
     "nodemailer": "^6.4.11",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.2.2",
     "react-scripts": "^3.4.4",
+    "react-social-icons": "^4.1.0",
     "styled-components": "^5.2.0",
     "uuid": "^8.3.1"
   },
@@ -24,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
@@ -43,6 +47,12 @@
     ]
   },
   "devDependencies": {
-    "react-social-icons": "^4.1.0"
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.1.2"
   }
 }
