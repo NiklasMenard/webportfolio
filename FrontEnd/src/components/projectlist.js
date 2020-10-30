@@ -9,7 +9,7 @@ const ProjectList = () => {
     {
       id: uuidv4(),
       name: 'ToDo App',
-      description: 'Simple to do App Simple to do App Simple to do App Simple to do App',
+      description: 'Simple to do App',
       linkTo: '/projects/todoapp',
       code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/components/project_demos/todoapp',
       demo: true,

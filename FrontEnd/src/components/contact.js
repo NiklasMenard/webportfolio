@@ -69,8 +69,8 @@ const Contact = () => {
           <FormGroup>
             <label htmlFor="message">
               Message
-              <textarea rows="5" value={newMessage} onChange={onMessageChange} />
             </label>
+            <textarea rows="5" value={newMessage} onChange={onMessageChange} />
           </FormGroup>
           <FormGroup>
             <button type="submit">Submit</button>
@@ -86,20 +86,21 @@ color:rgb(253, 255, 254);
 background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
 padding: 2rem;
-width: 15rem;
 margin-bottom: 10rem;
-}
+width: 15rem;
 `;
 
 const FormGroup = styled.div`
 display: flex;
 flex-direction: column;
 padding: 1rem;
-textarea {
+label {
   width: 13rem;
+}
+textarea {
   resize: vertical;
-  height: 6rem;
-  border-radius: 0.5rem;
+  min-widht: 10rem;
+  max-height: 15rem;
 }
 }
 `;

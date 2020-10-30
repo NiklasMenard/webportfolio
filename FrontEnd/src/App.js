@@ -3,10 +3,11 @@ import React from 'react';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
+
 import Header from './components/header';
 import Footer from './components/footer';
-import Background from './components/images/bkimage.png';
-import CenterElementRouter from './router/centerrouter';
+import Background from './resources/bkimage.png';
+import CenterElementRouter from './utils/centerrouter';
 import GlobalStyle from './styles/globalstyle';
 
 const App = () => (

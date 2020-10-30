@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
-import ProfilePicture from './images/profilepic.png';
+import ProfilePicture from '../resources/profilepic.png';
 
 const Footer = () => (
   <FooterContainer>
