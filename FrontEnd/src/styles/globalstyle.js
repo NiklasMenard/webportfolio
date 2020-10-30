@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: black;
     margin: 1rem;
+    height: 100%;
   }
   
   h1, h3, p, ul, a {

@@ -30,22 +30,21 @@ const MainWrapper = styled.div`
 display: flex;
 flex-flow: column;
 background: url(${Background}) no-repeat center / cover;
-min-height: 90vh;
 border-radius: 1rem;
-@media (max-width: 600px) {
-    min-height: 130vh;
-}
 `;
 
 const CenterComponent = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-@media (min-width: 600px) {
-    height: 90vh;
-}
+min-height: 85vh;
+@media only screen  and (min-width : 3840px) {
+  min-height: 90vh;
+  }
+  
 @media (max-width: 600px) {
-    min-height: 90vh;
+  min-height: 125vh;
 }
+
 `;
 export default App;

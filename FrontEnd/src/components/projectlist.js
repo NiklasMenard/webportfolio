@@ -16,7 +16,7 @@ const ProjectList = () => {
     },
     {
       id: uuidv4(),
-      name: "Dijkstra's Algorithm",
+      name: "Dijkstra Algorithm",
       description: 'Simple Python implementation of Dijkstras Shortest path algorithm',
       linkTo: '',
       code: 'https://github.com/NiklasMenard/dijkstra_shortest_path',
@@ -57,11 +57,9 @@ const ProjectList = () => {
 // styles
 
 const ProjectBox = styled.div`
-display: flex;
-flex-direction: column;
 background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
-align-items: center;
+padding: 0.5rem;
 `;
 
 const ProjectListItems = styled.div`
@@ -71,8 +69,8 @@ li {
     border-style: solid;
     border-color: black;
     border-radius: 1rem;
-    height: 14rem;
-    width: 18rem;
+
+    width: 16rem;
     @media (max-width: 600px) {
         height: 15rem;
         width: 15rem;

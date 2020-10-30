@@ -80,8 +80,10 @@ color:rgb(253, 255, 254);
 background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
 padding: 2rem;
-margin-bottom: 10rem;
 width: 15rem;
+@media (max-width: 600px) {
+  margin-bottom: 23rem;
+}
 `;
 
 const FormGroup = styled.div`
