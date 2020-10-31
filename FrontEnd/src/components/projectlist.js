@@ -70,8 +70,8 @@ li {
     border-style: solid;
     border-color: black;
     border-radius: 1rem;
-
-    width: 16rem;
+    height: 14rem;
+    width: 17rem;
     @media (max-width: 600px) {
         height: 15rem;
         width: 15rem;
