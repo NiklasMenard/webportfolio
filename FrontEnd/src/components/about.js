@@ -53,6 +53,7 @@ const TextBox = styled.div`
   padding: 2rem;
   border-radius: 1rem;
   width: 25rem;
+  margin-bottom: 2rem;
   @media (max-width: 600px) {
     width: 15rem;
     margin-bottom: 5rem;

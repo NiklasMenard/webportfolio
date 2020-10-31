@@ -81,6 +81,7 @@ background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
 padding: 2rem;
 width: 15rem;
+margin-bottom: 2rem;
 @media (max-width: 600px) {
   margin-bottom: 23rem;
 }

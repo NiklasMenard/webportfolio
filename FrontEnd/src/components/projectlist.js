@@ -60,6 +60,7 @@ const ProjectBox = styled.div`
 background-color: rgba(60, 60, 60, 0.5);
 border-radius: 1rem;
 padding: 0.5rem;
+margin-bottom: 2rem;
 `;
 
 const ProjectListItems = styled.div`
