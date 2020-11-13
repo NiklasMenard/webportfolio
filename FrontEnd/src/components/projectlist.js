@@ -16,11 +16,11 @@ const ProjectList = () => {
     },
     {
       id: uuidv4(),
-      name: "Dijkstra Algorithm",
-      description: 'Simple Python implementation of Dijkstras Shortest path algorithm',
-      linkTo: '',
-      code: 'https://github.com/NiklasMenard/dijkstra_shortest_path',
-      demo: false,
+      name: "E-commerce clothing shop",
+      description: 'An mock up e-commerce clothes shop implemented with Redux and PostgreSQL database',
+      linkTo: '/projects/clothes-shop',
+      code: 'https://github.com/NiklasMenard/Clothing-Web-Store-MockUp',
+      demo: true,
     },
     {
       id: uuidv4(),
@@ -70,10 +70,10 @@ li {
     border-style: solid;
     border-color: black;
     border-radius: 1rem;
-    height: 14rem;
+    height: 16rem;
     width: 17rem;
     @media (max-width: 600px) {
-        height: 15rem;
+        height: 16rem;
         width: 15rem;
     }
 }
