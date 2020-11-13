@@ -31,6 +31,7 @@ display: flex;
 flex-flow: column;
 background: url(${Background}) no-repeat center / cover;
 border-radius: 1rem;
+min-height: 98vh;
 `;
 
 const CenterComponent = styled.div`
