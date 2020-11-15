@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { Route , Switch, useRouteMatch} from 'react-router-dom';
 import { initializeProducts } from './reducers/productViewReducer';
+
+import styled, { ThemeProvider } from 'styled-components';
+import TransitionEffect from '../../styles/transitioneffect';
 import dimension from './utils/mediaConstants';
 
 import Header from './components/header';
 import ProductView from './views/productView';
 import ShoppingCartView from './views/shoppingCartView';
-
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
+    <TransitionEffect>
     <ThemeProvider theme={dimension}>
       <MainWrapper >
         <Header />
@@ -32,6 +34,7 @@ const App = () => {
         </Switch>
       </MainWrapper>
     </ThemeProvider>
+    </TransitionEffect>
   );
 };
 

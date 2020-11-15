@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { motion, AnimatePresence } from 'framer-motion';
 import SubmitBar from './submitbar';
 import TodoItem from './todoitem';
-import TransitionEffect from '../../../styles/transitioneffect';
+import TransitionEffect from '../../styles/transitioneffect';
 
 const ToDoApp = () => {
   const todos = [

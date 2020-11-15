@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
-import ProjectItem from './projectitem';
+import ProjectItem from '../components/projectitem';
 import TransitionEffect from '../styles/transitioneffect';
 
 const ProjectList = () => {
@@ -9,7 +9,7 @@ const ProjectList = () => {
     {
       id: uuidv4(),
       name: 'ToDo App',
-      description: 'Simple to do App',
+      description: 'Simple to do App using Hooks and functional components',
       linkTo: '/projects/todoapp',
       code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/components/project_demos/todoapp',
       demo: true,
@@ -70,12 +70,6 @@ li {
     border-style: solid;
     border-color: black;
     border-radius: 1rem;
-    height: 16rem;
-    width: 17rem;
-    @media (max-width: 600px) {
-        height: 16rem;
-        width: 15rem;
-    }
 }
 `;
 

@@ -6,8 +6,9 @@ import {
 
 import Header from './components/header';
 import Footer from './components/footer';
+
 import Background from './resources/bkimage.png';
-import CenterElementRouter from './utils/centerrouter';
+import RouterViews from './utils/viewrouter';
 import GlobalStyle from './styles/globalstyle';
 
 const App = () => (
@@ -17,7 +18,7 @@ const App = () => (
     <MainWrapper>
       <Header />
       <CenterComponent>
-        <CenterElementRouter />
+        <RouterViews />
       </CenterComponent>
     </MainWrapper>
     <Footer />

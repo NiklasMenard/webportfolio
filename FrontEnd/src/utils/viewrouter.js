@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Contact from '../components/contact';
-import About from '../components/about';
-import ProjectList from '../components/projectlist';
-import ToDoApp from '../components/project_demos/todoapp/todoapp';
-import ClothesWebStore from '../components/project_demos/clothes_shop/ClothesWebStore';
 
-const TransitionCenterElement = () => {
+import Contact from '../views/contact';
+import About from '../views/about';
+import ProjectList from '../views/projects';
+
+import ToDoApp from '../project_demos/todoapp/todoapp';
+import ClothesWebStore from '../project_demos/clothes_shop/ClothesWebStore';
+
+const RouterViews = () => {
 
   return (
       <Switch >
@@ -20,4 +22,4 @@ const TransitionCenterElement = () => {
   );
 };
 
-export default TransitionCenterElement;
+export default RouterViews;
