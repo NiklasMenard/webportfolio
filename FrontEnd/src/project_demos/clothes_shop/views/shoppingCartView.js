@@ -23,7 +23,7 @@ const ShoppingCartView = () => {
       </Link>
       <ProductListItems
         productsToShow={productsInCart}
-        clickEvent={removeProductFromCart}
+        AddorRemove={removeProductFromCart}
         buttonName="Remove from Cart"
       />
     </ShoppingCartViewContainer>
@@ -36,15 +36,7 @@ const ShoppingCartViewContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: white;
-  height: 75rem;
-  width: 80rem;
+  height: inherit;
   overflow-y: auto;
-  h1, a {
-    align-self:center;
-    margin: 1rem;
-  }
-  @media (max-width:  ${(props) => props.theme.maxWidth}) {
-    height: ${(props) => props.theme.height};
-    width: ${(props) => props.theme.width};
-  }
+  text-align: center;
 `;

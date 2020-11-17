@@ -11,11 +11,11 @@ const Header = () => {
   const { url } = useRouteMatch();
 
   return (
-    <HeaderContainer height={location}>
+    <HeaderContainer>
       <LeftContainer />
       <Logo />
       <RightContainer />
-      <ShoppingCart to={`${url}/shopping-cart`}>
+      <ShoppingCart  visible={location} to={`${url}/shopping-cart`}>
         <FaShoppingCart />
       </ShoppingCart>
     </HeaderContainer>
@@ -25,7 +25,6 @@ const Header = () => {
 const HeaderContainer = styled.div`
   display: flex;
   background: #b6d5e1;
-  height: 35rem;
   position: relative;
   @media (max-width:  ${(props) => props.theme.maxWidth}) {
     flex-flow: column wrap;
@@ -39,6 +38,8 @@ font-size: 3rem;
 top:0;
 right:0;
 position:absolute;
+opacity: ${(props) => props.visible.pathname === '/projects/clothes-shop/shopping-cart' && '0'};
+pointer-events: ${(props) => props.visible.pathname === '/projects/clothes-shop/shopping-cart' && 'none'};
 @media (max-width:  ${(props) => props.theme.maxWidth}) {
   font-size 2rem;
 }
@@ -48,13 +49,12 @@ const Logo = styled.div`
   height: 25rem;
   width: 25rem;
   align-self: center;
-  flex: 1;
+  flex: none;
   background: url(${StoreLogo}) no-repeat center / cover;
   @media (max-width:  ${(props) => props.theme.maxWidth}) {
     margin-top: 2rem;
-    flex: 2;
-    height: 15rem;
-    width: 15rem;
+    height: 10rem;
+    width: 10rem;
     order: 1;
   }
 `;

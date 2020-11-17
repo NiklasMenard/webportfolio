@@ -11,7 +11,7 @@ const ProjectList = () => {
       name: 'ToDo App',
       description: 'Simple to do App using Hooks and functional components',
       linkTo: '/projects/todoapp',
-      code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/components/project_demos/todoapp',
+      code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/project_demos/todoapp',
       demo: true,
     },
     {

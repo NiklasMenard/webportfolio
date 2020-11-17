@@ -95,7 +95,6 @@ const LeftContainer = styled.div`
   flex-flow: column;
   flex: 1;
   justify-content: flex-end;
-  opacity: ${(props) => props.visible.pathname === '/projects/clothes-shop/shopping-cart' && '0'};
   @media (max-width: 1350px ) {
     width: 100%;
     order: 2;
@@ -134,7 +133,7 @@ const LowerCategoryBox = styled.div`
     && 'none'};
 
   @media (max-width: 1350px ) {
-    margin: 0rem;
+    margin-right: 0rem;
     align-self: center;
   }
 `;

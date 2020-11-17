@@ -5,7 +5,6 @@ import { initializeProducts } from './reducers/productViewReducer';
 
 import styled, { ThemeProvider } from 'styled-components';
 import TransitionEffect from '../../styles/transitioneffect';
-import dimension from './utils/mediaConstants';
 
 import Header from './components/header';
 import ProductView from './views/productView';
@@ -22,7 +21,7 @@ const App = () => {
 
   return (
     <TransitionEffect>
-    <ThemeProvider theme={dimension}>
+    <ThemeProvider theme={{maxWidth :'1350px'}}>
       <MainWrapper >
         <Header />
         <Switch>      
@@ -42,16 +41,20 @@ const MainWrapper = styled.div`
   display: flex;
   flex-flow: column;
   background: grey;
-  height: 75rem;
-  width: 80rem;
+  height: 65rem;
+  width: 75rem;
+  margin-bottom: 3rem;
   h1, h3, p, ul, a {
     color: black;
   }
-
   @media (max-width:  ${(props) => props.theme.maxWidth}) {
-    height: ${(props) => props.theme.height};
-    width: ${(props) => props.theme.width};
+    height: 50rem;
+    width: 40rem;
   }
+  @media (max-width: 780px) {
+   
+    width: 20rem;
+  } 
 `;
 
 export default App;

@@ -40,13 +40,5 @@ display: flex;
 align-items: center;
 justify-content: center;
 min-height: 85vh;
-@media only screen  and (min-width : 3840px) {
-  min-height: 90vh;
-  }
-  
-@media (max-width: 600px) {
-  min-height: 125vh;
-}
-
 `;
 export default App;

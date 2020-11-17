@@ -15,14 +15,14 @@ const ProductView = () => {
     const newOrder = { product_name: product.name, picture_key: product.picture_key };
     dispatch(newCartItem(newOrder));
   };
-
+  
   const productsToShow = FilterProducts(search, products, category);
   return (
     <ProductViewContainer >
       <h1>{generateProductTitleText(search, category)}</h1>
       <ProductListItems
         productsToShow={productsToShow}
-        clickEvent={addProductToCart}
+        AddorRemove={addProductToCart}
         buttonName="Add to Shopping Cart"
       />
     </ProductViewContainer>
@@ -33,17 +33,9 @@ const ProductViewContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: white;
-  height: 75rem;
-  width: 80rem;
+  height: inherit;
   overflow-y: auto;
-  h1 {
-    align-self:center;
-  }
-
-  @media (max-width:  ${(props) => props.theme.maxWidth}) {
-    height: ${(props) => props.theme.height};
-    width: ${(props) => props.theme.width};
-  }
+  text-align: center;
 `;
 
 export default ProductView;
