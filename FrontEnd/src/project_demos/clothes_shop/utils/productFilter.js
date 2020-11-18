@@ -7,10 +7,10 @@ export const FilterProducts = (newSearch, products, category) => {
   // random items for mock up purposes
   if (category.featured === 'Toggled') {
     if (category.productCategory === 'Shoes') {
-      return products.slice(4, 5);
+      return products.slice(0, 1);
     }
     if (category.productCategory === 'Pants') {
-      return products.slice(0, 1);
+      return products.slice(4, 5);
     }
     if (category.productCategory === 'Shirts') {
       return products.slice(3, 4);

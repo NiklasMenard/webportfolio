@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route , Switch, useRouteMatch} from 'react-router-dom';
 import { initializeProducts } from './reducers/productViewReducer';
+import { initializeShoppingCartProducts } from './reducers/shoppinCartReducer';
 
 import styled, { ThemeProvider } from 'styled-components';
 import TransitionEffect from '../../styles/transitioneffect';
@@ -17,6 +18,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(initializeProducts());
+    dispatch(initializeShoppingCartProducts());
   }, [dispatch]);
 
   return (

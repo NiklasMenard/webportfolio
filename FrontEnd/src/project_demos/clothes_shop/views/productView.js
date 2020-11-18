@@ -11,11 +11,14 @@ const ProductView = () => {
   const search = useSelector((state) => state.productView.newSearch);
   const products = useSelector((state) => state.productView.products);
 
-  const addProductToCart = (product) => {
-    const newOrder = { product_name: product.name, picture_key: product.picture_key };
+  const addProductToCart = (product, selectedSize) => {
+    if(selectedSize.size === 'Select Size'){
+      alert('You must select a size before putting product in shopping cart')
+    }
+    const newOrder = { product_name: product.name, picture_key: product.picture_key, sizes: [selectedSize] };
     dispatch(newCartItem(newOrder));
   };
-  
+
   const productsToShow = FilterProducts(search, products, category);
   return (
     <ProductViewContainer >
