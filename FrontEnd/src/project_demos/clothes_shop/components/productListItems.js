@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ProductItem from "./productItem";
 
 const ProductListItems = ({ productsToShow, AddorRemove, buttonName }) => {
-
+  
   return (
     <ListContainer>
     {productsToShow.map((product) => (

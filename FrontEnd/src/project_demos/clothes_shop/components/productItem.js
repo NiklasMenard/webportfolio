@@ -11,14 +11,14 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
   const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
 
   const dropDownClick = () => setIsActive(!isActive);
-  const [selectedSize, setSize] = useState({
+  const [selectedProduct, setProduct] = useState({
     detail_key: null,
     size: "Select Size",
   });
 
   const location = useLocation();
   const selectSize = (key, selected_drop_down_size) => {
-    setSize({ detail_key: key, size: selected_drop_down_size });
+    setProduct({ detail_key: key, size: selected_drop_down_size });
     setIsActive(false);
   };
 
@@ -29,7 +29,7 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
 
       <ProductButton
         type="button"
-        onClick={() => AddorRemove(product, selectedSize)}
+        onClick={() => AddorRemove(selectedProduct)}
       >
         {buttonName}
       </ProductButton>
@@ -39,7 +39,7 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
       ) : (
         <div>
           <ProductButton type="button" onClick={() => dropDownClick(!isActive)}>
-            {selectedSize.size}
+            {selectedProduct.size}
           </ProductButton>
 
           <DropDownSizes ref={dropdownRef} isActive={isActive}>

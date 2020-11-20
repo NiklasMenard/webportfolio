@@ -1,5 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
-import shoppingCartService from "../services/shoppingCartService";
+import shoppingCartService from "../services/shop_cart_products";
 
 const initialState = {
   cart_products: [],
@@ -8,12 +7,15 @@ const initialState = {
 const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_ITEM":
+  
       if (state.cart_products.length >= 10) {
         // eslint-disable-next-line no-alert
         alert("Maximum amount of products in cart is 10");
         return { ...state };
+      } else {
+        return  { ...state, cart_products: [...state.cart_products, action.data] };
       }
-      return { ...state, cart_products: [...state.cart_products, action.data] };
+      
 
     case "REMOVE_ITEM":
       return {
@@ -30,18 +32,19 @@ const shoppingCartReducer = (state = initialState, action) => {
   }
 };
 
-export const newCartItem = (orderItem) => ({
-  type: "ADD_ITEM",
-  data: {
-    product_id: uuidv4(),
-    name: orderItem.product_name,
-    picture_key: orderItem.picture_key,
-    sizes: orderItem.sizes,
-  },
-});
+export const newCartItem = (cartItemDetailKey) => async (dispatch) => {
+  const newCartItem = await shoppingCartService.addToCart({
+    product_detail_id: cartItemDetailKey,
+  });
+  console.log(newCartItem)
+  dispatch({
+    type: "ADD_ITEM",
+    data: newCartItem,
+  });
+};
 
 export const initializeShoppingCartProducts = () => async (dispatch) => {
-  const cart_products = await shoppingCartService.getAllShoppingCartProducts();
+  const cart_products = await shoppingCartService.getCartProducts();
   dispatch({
     type: "INIT_SHOPCART_PRODUCTS",
     data: cart_products,

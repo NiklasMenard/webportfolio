@@ -1,4 +1,4 @@
-import productService from '../services/productService';
+import productService from '../services/products';
 
 const initialState = {
   category: { genderCategory: '', productCategory: '', featured: '' },
