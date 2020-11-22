@@ -4,11 +4,10 @@ import styled from "styled-components";
 import ProductItem from "./productItem";
 
 const ProductListItems = ({ productsToShow, AddorRemove, buttonName }) => {
-  
   return (
     <ListContainer>
     {productsToShow.map((product) => (
-      <ListStyle key={product.product_id}>
+      <ListStyle key={product.sizes[0].detail_key}>
         <ProductItem
           product={product}
           AddorRemove={AddorRemove}

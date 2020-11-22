@@ -16,11 +16,11 @@ transporter.verify((error, success) => {
     if (error) {
         console.log(error);
     } else {
-        console.log('Server is running');
+        console.log('NodeMail Server is running');
     }
 });
 
-nodemailRouter.post('/send', (req, res, next) => {
+nodemailRouter.post('/', (req, res, next) => {
     
     const name = req.body.name
     const email = req.body.email

@@ -3,14 +3,23 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProductListItems from '../components/productListItems';
-import { removeCartItem } from '../reducers/shoppinCartReducer';
+import { removeCartItem, decreaseQuantity } from '../reducers/shoppinCartReducer';
 
 const ShoppingCartView = () => {
   const dispatch = useDispatch();
   const productsInCart = useSelector((state) => state.shoppingCart.cart_products);
 
-  const removeProductFromCart = (product) => {
-    dispatch(removeCartItem(product.product_id));
+  const removeProductFromCart = (selectedProduct) => {
+    //check if product in cart and quantity > 0
+    if(productsInCart.some(product => product.sizes[0].detail_key===selectedProduct.detail_key
+      && product.quantity > 1)) {
+        const decrement = (quantity) => (quantity - 1)
+      dispatch(decreaseQuantity(selectedProduct.detail_key, 'decrease', decrement));
+    }
+    else {
+      dispatch(removeCartItem(selectedProduct.detail_key));
+    }
+    
   };
 
   return (

@@ -1,8 +1,7 @@
 const express = require('express')
 const app = express()
-require('express-async-errors')
-
 const cors = require('cors')
+require('express-async-errors')
 
 const cartRouter = require('./controllers/cart_products')
 const productsRouter = require('./controllers/products')

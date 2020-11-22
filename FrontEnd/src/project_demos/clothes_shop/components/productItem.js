@@ -6,13 +6,12 @@ import pictureArray from "../utils/pictureArray";
 import useDetectOutsideClick from "../utils/detectClickedOutside";
 
 const ProductItem = ({ product, AddorRemove, buttonName }) => {
-
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
 
   const dropDownClick = () => setIsActive(!isActive);
   const [selectedProduct, setProduct] = useState({
-    detail_key: null,
+    detail_key: product.sizes[0].detail_key,
     size: "Select Size",
   });
 
@@ -27,15 +26,15 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
       <ProductName>{product.name}</ProductName>
       <ProductPicture src={pictureArray[product.picture_key].picture} alt="" />
 
-      <ProductButton
-        type="button"
-        onClick={() => AddorRemove(selectedProduct)}
-      >
+      <ProductButton type="button" onClick={() => AddorRemove(selectedProduct)}>
         {buttonName}
       </ProductButton>
 
       {location.pathname === "/projects/clothes-shop/shopping-cart" ? (
-        <p>Selected size {product.sizes[0].size}</p>
+        <div>
+          <p>Selected size: {product.sizes[0].size}</p>
+          <p>Quantity: {product.quantity}</p>
+        </div>
       ) : (
         <div>
           <ProductButton type="button" onClick={() => dropDownClick(!isActive)}>
