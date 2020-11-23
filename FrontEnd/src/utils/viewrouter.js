@@ -6,7 +6,7 @@ import About from '../views/about';
 import ProjectList from '../views/projects';
 
 import ToDoApp from '../project_demos/todoapp/todoapp';
-import ClothesWebStore from '../project_demos/clothes_shop/ClothesWebStore';
+import ClothesWebStore from '../project_demos/clothes_shop/index';
 
 const RouterViews = () => (
   <Switch>

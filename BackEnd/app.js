@@ -6,14 +6,14 @@ require('express-async-errors');
 
 const cartRouter = require('./controllers/cart_products');
 const productsRouter = require('./controllers/products');
-const nodemailRouter = require('./controllers/nodemail');
+// const nodemailRouter = require('./controllers/nodemail');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static('build'));
 app.use('/api/products', productsRouter);
 app.use('/api/cart_products', cartRouter);
-app.use('/send', nodemailRouter);
+// app.use('/send', nodemailRouter);
 
 // send index file when backwards to page from other site
 app.get('/*', (req, res) => {
