@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const baseUrl = 'https://www.niklasmenard.com/api/cart_products';
-// const baseUrl = 'http://localhost:3001/api/cart_products';
+// const baseUrl = 'https://www.niklasmenard.com/api/cart_products';
+const baseUrl = 'http://localhost:3001/api/cart_products';
 
 const getCartProducts = async () => {
   const response = await axios.get(baseUrl);

@@ -30,7 +30,7 @@ java -jar maze_game.jar in the root directory.
 
 ## How to run
 
-In the backend folder run npm install and npm start afterwards.
+In the frontend folder run npm install and npm start afterwards.
 
 Link to website
 
