@@ -19,8 +19,8 @@ const Footer = () => (
       <p>
         Feel free to
         <HashLink to="/contact#top">contact</HashLink>
-        me and check out my
-        <HashLink to="/projects#top">work</HashLink>
+        me for a CV and check out my
+        <HashLink to="/projects#top">work.</HashLink>
       </p>
     </SkillsBox>
   </FooterContainer>
