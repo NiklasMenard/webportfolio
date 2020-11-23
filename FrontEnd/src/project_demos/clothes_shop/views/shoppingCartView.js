@@ -10,20 +10,17 @@ const ShoppingCartView = () => {
   const productsInCart = useSelector((state) => state.shoppingCart.cart_products);
 
   const removeProductFromCart = (selectedProduct) => {
-    //check if product in cart and quantity > 0
-    if(productsInCart.some(product => product.sizes[0].detail_key===selectedProduct.detail_key
+    // check if product in cart and quantity > 0
+    if (productsInCart.some((product) => product.sizes[0].detail_key === selectedProduct.detail_key
       && product.quantity > 1)) {
-        const decrement = (quantity) => (quantity - 1)
-      dispatch(decreaseQuantity(selectedProduct.detail_key, 'decrease', decrement));
-    }
-    else {
+      dispatch(decreaseQuantity(selectedProduct.detail_key));
+    } else {
       dispatch(removeCartItem(selectedProduct.detail_key));
     }
-    
   };
 
   return (
-    <ShoppingCartViewContainer >
+    <ShoppingCartViewContainer>
       <h1>Products in Shopping Cart</h1>
       <Link to="/projects/clothes-shop">
         <button type="button">

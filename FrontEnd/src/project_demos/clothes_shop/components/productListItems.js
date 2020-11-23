@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import styled from "styled-components";
-import ProductItem from "./productItem";
+import React from 'react';
+import styled from 'styled-components';
+import ProductItem from './productItem';
 
-const ProductListItems = ({ productsToShow, AddorRemove, buttonName }) => {
-  return (
-    <ListContainer>
+const ProductListItems = ({ productsToShow, AddorRemove, buttonName }) => (
+  <ListContainer>
     {productsToShow.map((product) => (
       <ListStyle key={product.sizes[0].detail_key}>
         <ProductItem
@@ -16,8 +15,7 @@ const ProductListItems = ({ productsToShow, AddorRemove, buttonName }) => {
       </ListStyle>
     ))}
   </ListContainer>
-  )
-}
+);
 
 const ListContainer = styled.div`
   display: flex;

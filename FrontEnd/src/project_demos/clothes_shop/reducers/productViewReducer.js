@@ -9,7 +9,7 @@ const initialState = {
 const productViewReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'CHANGE_CATEGORY':
-      return { ...state, category: action.data, newSearch: ''};
+      return { ...state, category: action.data, newSearch: '' };
 
     case 'NEW_SEARCH':
       return { ...state, newSearch: action.data };

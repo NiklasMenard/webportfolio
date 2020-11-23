@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import styled from "styled-components";
-import pictureArray from "../utils/pictureArray";
-import useDetectOutsideClick from "../utils/detectClickedOutside";
+import React, { useState, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import styled from 'styled-components';
+import pictureArray from '../utils/pictureArray';
+import useDetectOutsideClick from '../utils/detectClickedOutside';
 
 const ProductItem = ({ product, AddorRemove, buttonName }) => {
   const dropdownRef = useRef(null);
@@ -12,12 +12,12 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
   const dropDownClick = () => setIsActive(!isActive);
   const [selectedProduct, setProduct] = useState({
     detail_key: product.sizes[0].detail_key,
-    size: "Select Size",
+    size: 'Select Size',
   });
 
   const location = useLocation();
-  const selectSize = (key, selected_drop_down_size) => {
-    setProduct({ detail_key: key, size: selected_drop_down_size });
+  const selectSize = (key, selectedDropDownSize) => {
+    setProduct({ detail_key: key, size: selectedDropDownSize });
     setIsActive(false);
   };
 
@@ -30,10 +30,16 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
         {buttonName}
       </ProductButton>
 
-      {location.pathname === "/projects/clothes-shop/shopping-cart" ? (
+      {location.pathname === '/projects/clothes-shop/shopping-cart' ? (
         <div>
-          <p>Selected size: {product.sizes[0].size}</p>
-          <p>Quantity: {product.quantity}</p>
+          <p>
+            Selected size:
+            {product.sizes[0].size}
+          </p>
+          <p>
+            Quantity:
+            {product.quantity}
+          </p>
         </div>
       ) : (
         <div>
@@ -42,15 +48,13 @@ const ProductItem = ({ product, AddorRemove, buttonName }) => {
           </ProductButton>
 
           <DropDownSizes ref={dropdownRef} isActive={isActive}>
-            {product.sizes.map((product_detail) => (
-              <li key={product_detail.detail_key}>
+            {product.sizes.map((productDetail) => (
+              <li key={productDetail.detail_key}>
                 <button
                   type="button"
-                  onClick={() =>
-                    selectSize(product_detail.detail_key, product_detail.size)
-                  }
+                  onClick={() => selectSize(productDetail.detail_key, productDetail.size)}
                 >
-                  {product_detail.size}
+                  {productDetail.size}
                 </button>
               </li>
             ))}
@@ -88,7 +92,7 @@ const ProductButton = styled.button`
 `;
 
 const DropDownSizes = styled.div`
-  display: ${(props) => !props.isActive && "none"};
+  display: ${(props) => !props.isActive && 'none'};
   button {
     width: 14rem;
     border-top: none;

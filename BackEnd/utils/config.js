@@ -1,8 +1,8 @@
-let db_client_path = "../pools/dev_db"
+let dbClientPath = '../pools/dev_db';
 
-if (process.env.NODE_ENV === 'prod') { db_client_path = "../pools/prod_db"}
+if (process.env.NODE_ENV === 'prod') { dbClientPath = '../pools/prod_db'; }
 
-const client = require(db_client_path);
+// eslint-disable-next-line import/no-dynamic-require
+const client = require(dbClientPath);
 
-
-module.exports = client
+module.exports = client;

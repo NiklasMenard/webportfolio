@@ -16,7 +16,7 @@ const ProjectList = () => {
     },
     {
       id: uuidv4(),
-      name: "E-commerce clothing shop",
+      name: 'E-commerce clothing shop',
       description: 'An mock up e-commerce clothes shop implemented with Redux and PostgreSQL database',
       linkTo: '/projects/clothes-shop',
       code: 'https://github.com/NiklasMenard/Clothing-Web-Store-MockUp',

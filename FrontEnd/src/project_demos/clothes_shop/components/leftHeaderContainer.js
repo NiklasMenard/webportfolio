@@ -7,13 +7,13 @@ import { categoryChange } from '../reducers/productViewReducer';
 const LeftHeaderContainer = () => {
   const location = useLocation();
   const { url } = useRouteMatch();
-  
+
   const dispatch = useDispatch();
   const category = useSelector((state) => state.productView.category);
   const changeCategory = (categoryObject) => {
     dispatch(categoryChange(categoryObject));
   };
-  
+
   return (
     <LeftContainer visible={location}>
       <UpperCategoryBox>

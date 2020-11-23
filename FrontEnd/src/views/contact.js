@@ -51,20 +51,26 @@ const Contact = () => {
       <ContactContainer>
         <form onSubmit={handleContact}>
           <FormGroup>
-            <label htmlFor="name">Name</label>
-            <input type="text" value={newName} onChange={onNameChange} />
+            <label htmlFor="name">
+              Name
+              <input type="text" value={newName} onChange={onNameChange} />
+            </label>
           </FormGroup>
           <FormGroup>
-            <label htmlFor="email">Email</label>
-            <input
+            <label htmlFor="email">
+              Email
+              <input
                 type="email"
                 value={newEmailAddress}
                 onChange={onEmailChange}
               />
+            </label>
           </FormGroup>
           <FormGroup>
-            <label htmlFor="message">Message</label>
-            <textarea rows="5" value={newMessage} onChange={onMessageChange} />
+            <label htmlFor="message">
+              Message
+              <textarea rows="5" value={newMessage} onChange={onMessageChange} />
+            </label>
           </FormGroup>
           <FormGroup>
             <button type="submit">Submit</button>
@@ -92,8 +98,10 @@ display: flex;
 flex-direction: column;
 padding: 1rem;
 textarea {
+  width: 13rem;
+  border-radius: 0.5rem;
   resize: vertical;
-  min-height: 5rem;
+  min-height: 8rem;
   max-height: 15rem;
   }
 }

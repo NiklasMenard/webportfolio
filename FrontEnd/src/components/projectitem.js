@@ -1,9 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const ProjectItem = ({ name, description, linkTo, demo, code }) => (
+const ProjectItem = ({
+  name, description, linkTo, demo, code,
+}) => (
   <ItemWrapper>
     <TextBox>
       <h3>{name}</h3>
