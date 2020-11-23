@@ -1,12 +1,10 @@
-/* eslint-disable no-console */
-import { getAllCartProducts, getAddedCartProduct } from './sql_queries';
-
 const cartRouter = require('express').Router();
 const client = require('../utils/config');
+const SQL = require('./sql_queries');
 
 cartRouter.get('/', async (req, res) => {
   try {
-    const allProducts = await client.query(getAllCartProducts);
+    const allProducts = await client.query(SQL.getAllCartProducts);
     res.json(allProducts.rows);
   } catch (err) {
     console.error(err.message);
@@ -21,7 +19,7 @@ cartRouter.post('/', async (req, res) => {
       'INSERT INTO cart_items (product_detail_id, quantity) VALUES($1, $2)',
       [product.product_detail_id, quantity],
     );
-    const newCartProduct = await client.query(getAddedCartProduct, [
+    const newCartProduct = await client.query(SQL.getAddedCartProduct, [
       product.product_detail_id,
     ]);
 

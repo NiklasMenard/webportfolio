@@ -1,4 +1,4 @@
-export const getAllProducts = `SELECT 
+const getAllProducts = `SELECT 
 products.product_id, 
 products.category_id,
 products.name,
@@ -14,7 +14,7 @@ FROM
 GROUP BY products.product_id;
 `;
 
-export const getAllCartProducts = `SELECT 
+const getAllCartProducts = `SELECT 
 products.product_id, 
 products.category_id,
 products.name,
@@ -32,7 +32,7 @@ FROM
 GROUP BY products.product_id, product_details.size, cart_items.quantity;
 `;
 
-export const getAddedCartProduct = `SELECT 
+const getAddedCartProduct = `SELECT 
 products.product_id, 
 products.category_id,
 products.name,
@@ -50,3 +50,5 @@ FROM
           ON CART_ITEMS.product_detail_id = product_details.product_detail_id
 GROUP BY products.product_id, product_details.product_detail_id, cart_items.quantity;
 `;
+
+module.exports = { getAllProducts, getAllCartProducts, getAddedCartProduct };

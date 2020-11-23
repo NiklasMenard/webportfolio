@@ -9,7 +9,7 @@ const ProjectList = () => {
     {
       id: uuidv4(),
       name: 'ToDo App',
-      description: 'Simple to do App using Hooks and functional components',
+      description: 'Simple ToDo App using Hooks and functional components',
       linkTo: '/projects/todoapp',
       code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/project_demos/todoapp',
       demo: true,
@@ -19,7 +19,7 @@ const ProjectList = () => {
       name: 'E-commerce clothing shop',
       description: 'An mock up e-commerce clothes shop implemented with Redux and PostgreSQL database',
       linkTo: '/projects/clothes-shop',
-      code: 'https://github.com/NiklasMenard/Clothing-Web-Store-MockUp',
+      code: 'https://github.com/NiklasMenard/webportfolio/tree/master/FrontEnd/src/project_demos/clothes_shop',
       demo: true,
     },
     {

@@ -58,7 +58,6 @@ font-size: 3rem;
 `;
 
 const QuantityCounter = styled.p`
-
 color: red !important;
 align-self: flex-end;
 `;

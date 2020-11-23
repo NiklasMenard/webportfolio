@@ -22,6 +22,7 @@ const ShoppingCartView = () => {
   return (
     <ShoppingCartViewContainer>
       <h1>Products in Shopping Cart</h1>
+      <p>(For demo purposes shopping cart view is not unique between visitors)</p>
       <Link to="/projects/clothes-shop">
         <button type="button">
           Go back to shopping
