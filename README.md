@@ -72,10 +72,9 @@ After the database and .env file have been setup go to /frontend and create a bu
 ```
 npm run build
 ```
-Move the build folder to the frontend folder and run the following commands
+Move the build folder to the frontend folder and run the following commands in backend folder
 
-$ cd ../backend
+```
 $ npm install
 $ npm start
 ```
-Then the app should open up in browser in PORT 3001 with the local database.
