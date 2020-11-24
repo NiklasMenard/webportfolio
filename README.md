@@ -56,12 +56,14 @@ $ PGUSER={YOUR USERNAME} PGPASSWORD={PASSWORD} pg_dump {YOUR_DB_NAME}  < clothes
 ```
 More info at: https://www.postgresql.org/docs/9.4/backup-dump.html
 
-Additionally to get the backend running you must configure an .env file in the backend folder with you email and password and port. Below is an template:
+Additionally to get the backend running you must configure an .env file in the backend folder with you email, email password, database username and database password. Below is an template:
 
 ```
 EMAIL={your email}
 PASSWORD ={password}
 PORT=3001
+DATABASE_USER={database username}
+DATABASE_PW={database username password}
 ```
 
 After the database and .env file have been setup run the following command in the backend folder
