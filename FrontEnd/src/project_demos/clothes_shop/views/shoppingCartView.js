@@ -22,9 +22,7 @@ const ShoppingCartView = () => {
   return (
     <ShoppingCartViewContainer>
       <h1>Products in Shopping Cart</h1>
-      <p>(For demo purposes shopping cart is linked to the database but it is not
-        linked to a user account. Because of this the view is not unique between
-        visitors)</p>
+      <p>(For demo purposes shopping cart items are saved in database)</p>
       <Link to="/projects/clothes-shop">
         <button type="button">
           Go back to shopping

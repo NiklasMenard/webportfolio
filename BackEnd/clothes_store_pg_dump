@@ -1,0 +1,310 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.10
+-- Dumped by pg_dump version 11.10
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: cart_items; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.cart_items (
+    cart_item_id integer NOT NULL,
+    product_detail_id integer,
+    quantity integer
+);
+
+
+ALTER TABLE public.cart_items OWNER TO postgres;
+
+--
+-- Name: cart_items_cart_item_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.cart_items_cart_item_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cart_items_cart_item_id_seq OWNER TO postgres;
+
+--
+-- Name: cart_items_cart_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.cart_items_cart_item_id_seq OWNED BY public.cart_items.cart_item_id;
+
+
+--
+-- Name: categories; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.categories (
+    category_id integer NOT NULL,
+    name character varying(100)
+);
+
+
+ALTER TABLE public.categories OWNER TO postgres;
+
+--
+-- Name: product_details; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.product_details (
+    product_detail_id integer NOT NULL,
+    product_id integer,
+    size character varying(15),
+    color character varying(50)
+);
+
+
+ALTER TABLE public.product_details OWNER TO postgres;
+
+--
+-- Name: products; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.products (
+    product_id integer NOT NULL,
+    category_id integer,
+    name character varying(100),
+    gender character varying(100),
+    picture_key integer,
+    price integer
+);
+
+
+ALTER TABLE public.products OWNER TO postgres;
+
+--
+-- Name: test_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.test_id_seq
+    START WITH 11
+    INCREMENT BY 1
+    MINVALUE 11
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.test_id_seq OWNER TO postgres;
+
+--
+-- Name: test_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.test_id_seq OWNED BY public.product_details.product_detail_id;
+
+
+--
+-- Name: cart_items cart_item_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_items ALTER COLUMN cart_item_id SET DEFAULT nextval('public.cart_items_cart_item_id_seq'::regclass);
+
+
+--
+-- Name: product_details product_detail_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.product_details ALTER COLUMN product_detail_id SET DEFAULT nextval('public.test_id_seq'::regclass);
+
+
+--
+-- Data for Name: cart_items; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.cart_items (cart_item_id, product_detail_id, quantity) FROM stdin;
+\.
+
+
+--
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.categories (category_id, name) FROM stdin;
+1	SHOES
+2	PANTS
+3	SHIRTS
+\.
+
+
+--
+-- Data for Name: product_details; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.product_details (product_detail_id, product_id, size, color) FROM stdin;
+1	1	35W x 32L	Blue
+2	1	34W x 36L	Blue
+3	1	35W x 30L	Blue
+4	2	34W x 36L	Blue
+5	2	35W x 30L	Blue
+6	2	35W x 32L	Blue
+7	2	35W x 34L	Blue
+8	3	34W x 36L	Blue
+9	3	35W x 30L	Blue
+10	3	35W x 32L	Blue
+11	4	40	Green
+12	4	41	Green
+13	4	42	Green
+14	4	43	Green
+15	5	40	Blue
+16	5	41	Blue
+17	6	40	Green
+18	6	40	Blue
+19	6	41	Green
+20	6	42	Green
+21	7	Small	Green
+22	7	Medium	Green
+23	7	Large	Green
+24	8	Small	Green
+25	8	Medium	Green
+26	8	Large	Green
+27	9	Small	Light-Green
+28	9	Medium	Light-Green
+29	9	Large	Light-Green
+30	10	40	White-Orange
+31	10	41	White-Orange
+32	11	42	White-Orange
+35	12	43	White-Orange
+33	13	35W x 32L	Blue
+34	13	34W x 32L	Blue
+36	12	42	White-Orange
+37	14	34W x 36L	Blue
+38	14	28W x 30L	Blue
+39	15	28W x 30L	Blue
+40	15	30W x 30L	Blue
+41	16	Small	Black-Red
+42	16	Medium	Black-Red
+43	16	Large	Black-Red
+44	17	Small	Black-Red
+45	17	Medium	Black-Red
+46	17	Large	Black-Red
+47	18	Small	Black-Red
+48	18	Medium	Black-Red
+49	18	Large	Black-Red
+\.
+
+
+--
+-- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.products (product_id, category_id, name, gender, picture_key, price) FROM stdin;
+1	2	Mens Jean 1	male	0	50
+2	2	Mens Jean 2	male	0	100
+3	2	Mens Jean 3	male	0	150
+7	3	Mens Shirt 1	male	2	180
+4	1	Mens Shoe 1	male	1	100
+5	1	Mens Shoe 2	male	1	150
+6	1	Mens Shoe 3	male	1	150
+8	3	Mens Shirt 2	male	2	180
+9	3	Mens Shirt 3	male	2	200
+10	1	Women Shoe 1	female	4	80
+11	1	Women Shoe 2	female	4	60
+12	1	Women Shoe 3	female	4	100
+13	2	Women Pants 1	female	3	35
+14	2	Women Pants 2	female	3	35
+15	2	Women Pants 3	female	3	45
+16	3	Women Shirt 1	female	5	25
+17	3	Women Shirt 2	female	5	35
+18	3	Women Shirt 3	female	5	15
+\.
+
+
+--
+-- Name: cart_items_cart_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.cart_items_cart_item_id_seq', 208, true);
+
+
+--
+-- Name: test_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.test_id_seq', 49, true);
+
+
+--
+-- Name: cart_items cart_items_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_items
+    ADD CONSTRAINT cart_items_pkey PRIMARY KEY (cart_item_id);
+
+
+--
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.categories
+    ADD CONSTRAINT categories_pkey PRIMARY KEY (category_id);
+
+
+--
+-- Name: product_details product_details_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.product_details
+    ADD CONSTRAINT product_details_pkey PRIMARY KEY (product_detail_id);
+
+
+--
+-- Name: products products_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT products_pkey PRIMARY KEY (product_id);
+
+
+--
+-- Name: products fk_categories; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.products
+    ADD CONSTRAINT fk_categories FOREIGN KEY (category_id) REFERENCES public.categories(category_id);
+
+
+--
+-- Name: cart_items fk_product_details; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.cart_items
+    ADD CONSTRAINT fk_product_details FOREIGN KEY (product_detail_id) REFERENCES public.product_details(product_detail_id);
+
+
+--
+-- Name: product_details fk_products; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.product_details
+    ADD CONSTRAINT fk_products FOREIGN KEY (product_id) REFERENCES public.products(product_id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
