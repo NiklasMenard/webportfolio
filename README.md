@@ -30,7 +30,7 @@ An mock-up e-commerce clothing shop implemented with Redux and PostrgreSQL datab
 The purpose of this demo is to showcase my skills working with Redux and PostgreSQL.
 The mock-up is lacking an user account implementation that would link the shopping 
 cart state and items to each individual user account. I decided to omit user accounts as it
-would make the demo too cumbersome (would require account creation).
+would make the demo too cumbersome (would require account creation and login).
 
 ## Java Random Maze Game
 
