@@ -52,24 +52,30 @@ $ npm start
 In order to run the backend locally you must have PostgreSQL installed and a server running. On your local server create a database and use the PG_DUMP tool to import the backend/clothes_store_pg_dump PG_DUMP file. Below is the command to use in the folder that pg dump file is located locally: 
 
 ```
-$ PGUSER={YOUR USERNAME} PGPASSWORD={PASSWORD} pg_dump {YOUR_DB_NAME}  < clothes_store_pg_dump
+$ PGUSER={username} PGPASSWORD={password} psql {database name} < clothes_store_pg_dump
 ```
 More info at: https://www.postgresql.org/docs/9.4/backup-dump.html
 
-Additionally to get the backend running you must configure an .env file in the backend folder with you email, email password, database username and database password. Below is an template:
+Additionally to get the backend running you must configure an .env file in the backend folder with you email, email password, database name, database username and database password. Below is an template:
 
 ```
 EMAIL={your email}
 PASSWORD ={password}
 PORT=3001
 DATABASE_USER={database username}
+DATABASE_NAME={database name}
 DATABASE_PW={database username password}
 ```
 
-After the database and .env file have been setup run the following command in the backend folder
+After the database and .env file have been setup go to /frontend and create a build file by running the following command
 
 ```
+npm run build
+```
+Move the build folder to the frontend folder and run the following commands
+
 $ cd ../backend
 $ npm install
 $ npm start
 ```
+Then the app should open up in browser in PORT 3001 with the local database.

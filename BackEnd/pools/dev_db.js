@@ -6,7 +6,7 @@ const pool = new Pool({
   password: process.env.DATABASE_PW,
   host: 'localhost',
   port: 5432,
-  database: 'clothingwebstoredb',
+  database: process.env.DATABASE_NAME,
 });
 
 module.exports = pool;
