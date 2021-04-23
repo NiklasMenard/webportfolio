@@ -5,7 +5,7 @@
 * [Setup](#setup)
 
 # General info
-
+Test
 This app is a portfolio website to showcase my projects and give a small introduction to myself. For simplicity the app has been divided into backend and frontend directories. Frontend src folder contains the code for the general website and projects. Specific project frontend code can be found in frontend/src/project_demos folder. Backend folder contains all the server side code including project_demo code.
 
 # Technologies
